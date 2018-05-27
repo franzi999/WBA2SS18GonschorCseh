@@ -22,6 +22,12 @@ var http = require('http');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', function (req, res) {
+    res.send('Hallo, World!!!');
+});
+
+app.get('/Login', LogIn);
+
 //Bind the routes
 require('./routes')(router);
 app.use('/', router);

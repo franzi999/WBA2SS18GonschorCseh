@@ -14,6 +14,7 @@ module.exports = router => {
     router.get('/', (req, res) => res.end('Welcome to Quiz-Lernen!'));
 
     //Add a new Question to the DB POST
+    var router;
     router.post('/addQuestion', (req, res) => {
 
         const frage = req.body.frage;
@@ -43,5 +44,6 @@ module.exports = router => {
                 .catch(err => res.status(err.status).json({ message: err.message }));
         }
     });
+
 
 }
