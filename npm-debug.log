@@ -1,0 +1,1162 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'domquery' ]
+2 info using npm@2.15.1
+3 info using node@v4.4.4
+4 verbose config Skipping project config: C:\Users\franz/.npmrc. (matches userconfig)
+5 verbose install initial load of C:\Users\franz\package.json
+6 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\body-parser\package.json
+7 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\connect-flash\package.json
+8 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\connect-mongo\package.json
+9 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\cookie-parser\package.json
+10 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\express\package.json
+11 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\express-session\package.json
+12 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\git\package.json
+13 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\modules\package.json
+14 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\mongoose\package.json
+15 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\npm-install-all\package.json
+16 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\passport\package.json
+17 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\passport-local\package.json
+18 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\request\package.json
+19 verbose installManyTop reading scoped package data from C:\Users\franz\node_modules\socket.io-client\package.json
+20 info package.json connect-flash@0.1.1 No license field.
+21 info package.json git@0.1.5 No license field.
+22 info package.json passport-local@1.0.0 No license field.
+23 info package.json modules@0.4.0 No license field.
+24 verbose readDependencies loading dependencies from C:\Users\franz\package.json
+25 silly cache add args [ 'domquery', null ]
+26 verbose cache add spec domquery
+27 silly cache add parsed spec Result {
+27 silly cache add   raw: 'domquery',
+27 silly cache add   scope: null,
+27 silly cache add   name: 'domquery',
+27 silly cache add   rawSpec: '',
+27 silly cache add   spec: 'latest',
+27 silly cache add   type: 'tag' }
+28 silly addNamed domquery@latest
+29 verbose addNamed "latest" is being treated as a dist-tag for domquery
+30 info addNameTag [ 'domquery', 'latest' ]
+31 silly mapToRegistry name domquery
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npmjs.org/
+34 silly mapToRegistry data Result {
+34 silly mapToRegistry   raw: 'domquery',
+34 silly mapToRegistry   scope: null,
+34 silly mapToRegistry   name: 'domquery',
+34 silly mapToRegistry   rawSpec: '',
+34 silly mapToRegistry   spec: 'latest',
+34 silly mapToRegistry   type: 'tag' }
+35 silly mapToRegistry uri https://registry.npmjs.org/domquery
+36 verbose addNameTag registry:https://registry.npmjs.org/domquery not in flight; fetching
+37 verbose request uri https://registry.npmjs.org/domquery
+38 verbose request no auth needed
+39 info attempt registry request try #1 at 09:45:21
+40 verbose request id b4fbdb9a758dbe47
+41 verbose etag W/"22a0bb5a9dc1dec78bf4ec41c53addd4"
+42 verbose lastModified Sat, 26 May 2018 22:22:06 GMT
+43 http request GET https://registry.npmjs.org/domquery
+44 http 304 https://registry.npmjs.org/domquery
+45 verbose headers { date: 'Fri, 01 Jun 2018 06:45:17 GMT',
+45 verbose headers   connection: 'keep-alive',
+45 verbose headers   'set-cookie': [ '__cfduid=dbe833dc722b77f2dddff723c986f19b31527835517; expires=Sat, 01-Jun-19 06:45:17 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+45 verbose headers   'cache-control': 'max-age=300',
+45 verbose headers   'cf-cache-status': 'HIT',
+45 verbose headers   'cf-ray': '423fb76fe85663f1-FRA',
+45 verbose headers   etag: '"22a0bb5a9dc1dec78bf4ec41c53addd4"',
+45 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+45 verbose headers   'last-modified': 'Sat, 26 May 2018 22:22:06 GMT',
+45 verbose headers   vary: 'accept-encoding, accept',
+45 verbose headers   server: 'cloudflare' }
+46 silly get cb [ 304,
+46 silly get   { date: 'Fri, 01 Jun 2018 06:45:17 GMT',
+46 silly get     connection: 'keep-alive',
+46 silly get     'set-cookie': [ '__cfduid=dbe833dc722b77f2dddff723c986f19b31527835517; expires=Sat, 01-Jun-19 06:45:17 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+46 silly get     'cache-control': 'max-age=300',
+46 silly get     'cf-cache-status': 'HIT',
+46 silly get     'cf-ray': '423fb76fe85663f1-FRA',
+46 silly get     etag: '"22a0bb5a9dc1dec78bf4ec41c53addd4"',
+46 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+46 silly get     'last-modified': 'Sat, 26 May 2018 22:22:06 GMT',
+46 silly get     vary: 'accept-encoding, accept',
+46 silly get     server: 'cloudflare' } ]
+47 verbose etag https://registry.npmjs.org/domquery from cache
+48 verbose get saving domquery to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\domquery\.cache.json
+49 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+50 silly addNameTag next cb for domquery with tag latest
+51 silly addNamed domquery@3.0.0
+52 verbose addNamed "3.0.0" is a plain semver version for domquery
+53 silly cache afterAdd domquery@3.0.0
+54 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\domquery\3.0.0\package\package.json not in flight; writing
+55 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+56 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\domquery\3.0.0\package\package.json written
+57 silly install resolved [ { name: 'domquery',
+57 silly install resolved     version: '3.0.0',
+57 silly install resolved     description: 'jQuery-like Handy DOM Manipulation Library',
+57 silly install resolved     main: 'index.js',
+57 silly install resolved     scripts: { test: 'browserify -d test.js | tape-run' },
+57 silly install resolved     repository:
+57 silly install resolved      { url: 'git+ssh://git@github.com/npm-dom/domquery.git',
+57 silly install resolved        type: 'git' },
+57 silly install resolved     keywords: [ 'dom', 'browser', 'npm-dom', 'jquery' ],
+57 silly install resolved     author: { name: 'Azer Koçulu', email: 'azer@kodfabrik.com' },
+57 silly install resolved     license: 'BSD',
+57 silly install resolved     dependencies:
+57 silly install resolved      { 'component-delegate': '0.2.2',
+57 silly install resolved        'discore-closest': '^0.1.3',
+57 silly install resolved        'dom-classes': '~0.0.0',
+57 silly install resolved        'dom-event': '~1.0.0',
+57 silly install resolved        'dom-select': '~1.1.1',
+57 silly install resolved        'dom-style': '~1.0.0',
+57 silly install resolved        'dom-tree': '~1.0.0',
+57 silly install resolved        'dom-value': '~1.0.1',
+57 silly install resolved        'format-text': '0.0.x',
+57 silly install resolved        'key-event': '~1.0.0',
+57 silly install resolved        'new-chain': 'github:azer/new-chain',
+57 silly install resolved        'new-element': '~1.0.0',
+57 silly install resolved        siblings: '^1.0.1',
+57 silly install resolved        trim: '0.0.1' },
+57 silly install resolved     devDependencies:
+57 silly install resolved      { browserify: '13.0.0',
+57 silly install resolved        'random-color': 'github:azer/random-color',
+57 silly install resolved        tape: '4.5.1',
+57 silly install resolved        'tape-run': '2.1.3' },
+57 silly install resolved     gitHead: 'd158752ab4c4bff0dd34d24b34b913b94de72a9b',
+57 silly install resolved     bugs: { url: 'https://github.com/npm-dom/domquery/issues' },
+57 silly install resolved     homepage: 'https://github.com/npm-dom/domquery#readme',
+57 silly install resolved     _id: 'domquery@3.0.0',
+57 silly install resolved     _shasum: 'b2f9e9e5f317778df0ba1a8eb7f82bdeca57284c',
+57 silly install resolved     _from: 'domquery@latest',
+57 silly install resolved     _npmVersion: '3.8.6',
+57 silly install resolved     _nodeVersion: '5.1.1',
+57 silly install resolved     _npmUser: { name: 'tehshrike', email: 'me@JoshDuff.com' },
+57 silly install resolved     maintainers: [ [Object] ],
+57 silly install resolved     dist:
+57 silly install resolved      { shasum: 'b2f9e9e5f317778df0ba1a8eb7f82bdeca57284c',
+57 silly install resolved        tarball: 'https://registry.npmjs.org/domquery/-/domquery-3.0.0.tgz' },
+57 silly install resolved     _npmOperationalInternal:
+57 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+57 silly install resolved        tmp: 'tmp/domquery-3.0.0.tgz_1460175527276_0.8448539962992072' },
+57 silly install resolved     directories: {},
+57 silly install resolved     _resolved: 'https://registry.npmjs.org/domquery/-/domquery-3.0.0.tgz',
+57 silly install resolved     readme: 'ERROR: No README data found!' } ]
+58 info install domquery@3.0.0 into C:\Users\franz
+59 info installOne domquery@3.0.0
+60 verbose installOne of domquery to C:\Users\franz not in flight; installing
+61 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+62 verbose lock using C:\Users\franz\AppData\Roaming\npm-cache\_locks\domquery-c563f493f4a43da1.lock for C:\Users\franz\node_modules\domquery
+63 silly install write writing domquery 3.0.0 to C:\Users\franz\node_modules\domquery
+64 verbose unbuild node_modules\domquery
+65 silly gentlyRm C:\Users\franz\node_modules\domquery is being purged from base C:\Users\franz
+66 verbose gentlyRm don't care about contents; nuking C:\Users\franz\node_modules\domquery
+67 verbose tar unpack C:\Users\franz\AppData\Roaming\npm-cache\domquery\3.0.0\package.tgz
+68 verbose tar unpacking to C:\Users\franz\node_modules\domquery
+69 silly gentlyRm C:\Users\franz\node_modules\domquery is being purged
+70 verbose gentlyRm don't care about contents; nuking C:\Users\franz\node_modules\domquery
+71 silly gunzTarPerm modes [ '777', '666' ]
+72 silly gunzTarPerm extractEntry package.json
+73 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+74 silly gunzTarPerm extractEntry .npmignore
+75 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+76 silly gunzTarPerm extractEntry README.md
+77 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+78 silly gunzTarPerm extractEntry index.js
+79 silly gunzTarPerm modified mode [ 'index.js', 420, 438 ]
+80 silly gunzTarPerm extractEntry lib/attr.js
+81 silly gunzTarPerm modified mode [ 'lib/attr.js', 420, 438 ]
+82 silly gunzTarPerm extractEntry lib/events.js
+83 silly gunzTarPerm modified mode [ 'lib/events.js', 420, 438 ]
+84 silly gunzTarPerm extractEntry lib/html.js
+85 silly gunzTarPerm modified mode [ 'lib/html.js', 420, 438 ]
+86 silly gunzTarPerm extractEntry lib/select.js
+87 silly gunzTarPerm modified mode [ 'lib/select.js', 420, 438 ]
+88 silly gunzTarPerm extractEntry lib/text.js
+89 silly gunzTarPerm modified mode [ 'lib/text.js', 420, 438 ]
+90 silly gunzTarPerm extractEntry lib/value.js
+91 silly gunzTarPerm modified mode [ 'lib/value.js', 420, 438 ]
+92 verbose write writing to C:\Users\franz\node_modules\domquery\package.json
+93 info preinstall domquery@3.0.0
+94 verbose readDependencies loading dependencies from C:\Users\franz\node_modules\domquery\package.json
+95 silly prepareForInstallMany adding component-delegate@0.2.2 from domquery dependencies
+96 silly prepareForInstallMany adding discore-closest@^0.1.3 from domquery dependencies
+97 silly prepareForInstallMany adding dom-classes@~0.0.0 from domquery dependencies
+98 silly prepareForInstallMany adding dom-event@~1.0.0 from domquery dependencies
+99 silly prepareForInstallMany adding dom-select@~1.1.1 from domquery dependencies
+100 silly prepareForInstallMany adding dom-style@~1.0.0 from domquery dependencies
+101 silly prepareForInstallMany adding dom-tree@~1.0.0 from domquery dependencies
+102 silly prepareForInstallMany adding dom-value@~1.0.1 from domquery dependencies
+103 silly prepareForInstallMany adding format-text@0.0.x from domquery dependencies
+104 silly prepareForInstallMany adding key-event@~1.0.0 from domquery dependencies
+105 silly prepareForInstallMany adding new-chain@github:azer/new-chain from domquery dependencies
+106 silly prepareForInstallMany adding new-element@~1.0.0 from domquery dependencies
+107 silly prepareForInstallMany adding siblings@^1.0.1 from domquery dependencies
+108 silly prepareForInstallMany adding trim@0.0.1 from domquery dependencies
+109 verbose readDependencies loading dependencies from C:\Users\franz\node_modules\domquery\package.json
+110 silly cache add args [ 'component-delegate@0.2.2', null ]
+111 verbose cache add spec component-delegate@0.2.2
+112 silly cache add args [ 'discore-closest@^0.1.3', null ]
+113 verbose cache add spec discore-closest@^0.1.3
+114 silly cache add parsed spec Result {
+114 silly cache add   raw: 'component-delegate@0.2.2',
+114 silly cache add   scope: null,
+114 silly cache add   name: 'component-delegate',
+114 silly cache add   rawSpec: '0.2.2',
+114 silly cache add   spec: '0.2.2',
+114 silly cache add   type: 'version' }
+115 silly addNamed component-delegate@0.2.2
+116 verbose addNamed "0.2.2" is a plain semver version for component-delegate
+117 silly mapToRegistry name component-delegate
+118 silly mapToRegistry using default registry
+119 silly mapToRegistry registry https://registry.npmjs.org/
+120 silly mapToRegistry data Result {
+120 silly mapToRegistry   raw: 'component-delegate',
+120 silly mapToRegistry   scope: null,
+120 silly mapToRegistry   name: 'component-delegate',
+120 silly mapToRegistry   rawSpec: '',
+120 silly mapToRegistry   spec: 'latest',
+120 silly mapToRegistry   type: 'tag' }
+121 silly mapToRegistry uri https://registry.npmjs.org/component-delegate
+122 verbose addNameVersion registry:https://registry.npmjs.org/component-delegate not in flight; fetching
+123 silly cache add parsed spec Result {
+123 silly cache add   raw: 'discore-closest@^0.1.3',
+123 silly cache add   scope: null,
+123 silly cache add   name: 'discore-closest',
+123 silly cache add   rawSpec: '^0.1.3',
+123 silly cache add   spec: '>=0.1.3 <0.2.0',
+123 silly cache add   type: 'range' }
+124 silly addNamed discore-closest@>=0.1.3 <0.2.0
+125 verbose addNamed ">=0.1.3 <0.2.0" is a valid semver range for discore-closest
+126 silly addNameRange { name: 'discore-closest',
+126 silly addNameRange   range: '>=0.1.3 <0.2.0',
+126 silly addNameRange   hasData: false }
+127 silly mapToRegistry name discore-closest
+128 silly mapToRegistry using default registry
+129 silly mapToRegistry registry https://registry.npmjs.org/
+130 silly mapToRegistry data Result {
+130 silly mapToRegistry   raw: 'discore-closest',
+130 silly mapToRegistry   scope: null,
+130 silly mapToRegistry   name: 'discore-closest',
+130 silly mapToRegistry   rawSpec: '',
+130 silly mapToRegistry   spec: 'latest',
+130 silly mapToRegistry   type: 'tag' }
+131 silly mapToRegistry uri https://registry.npmjs.org/discore-closest
+132 verbose addNameRange registry:https://registry.npmjs.org/discore-closest not in flight; fetching
+133 silly cache add args [ 'dom-classes@~0.0.0', null ]
+134 verbose cache add spec dom-classes@~0.0.0
+135 silly cache add parsed spec Result {
+135 silly cache add   raw: 'dom-classes@~0.0.0',
+135 silly cache add   scope: null,
+135 silly cache add   name: 'dom-classes',
+135 silly cache add   rawSpec: '~0.0.0',
+135 silly cache add   spec: '>=0.0.0 <0.1.0',
+135 silly cache add   type: 'range' }
+136 silly addNamed dom-classes@>=0.0.0 <0.1.0
+137 verbose addNamed ">=0.0.0 <0.1.0" is a valid semver range for dom-classes
+138 silly addNameRange { name: 'dom-classes', range: '>=0.0.0 <0.1.0', hasData: false }
+139 silly mapToRegistry name dom-classes
+140 silly mapToRegistry using default registry
+141 silly mapToRegistry registry https://registry.npmjs.org/
+142 silly mapToRegistry data Result {
+142 silly mapToRegistry   raw: 'dom-classes',
+142 silly mapToRegistry   scope: null,
+142 silly mapToRegistry   name: 'dom-classes',
+142 silly mapToRegistry   rawSpec: '',
+142 silly mapToRegistry   spec: 'latest',
+142 silly mapToRegistry   type: 'tag' }
+143 silly mapToRegistry uri https://registry.npmjs.org/dom-classes
+144 verbose addNameRange registry:https://registry.npmjs.org/dom-classes not in flight; fetching
+145 silly cache add args [ 'dom-event@~1.0.0', null ]
+146 verbose cache add spec dom-event@~1.0.0
+147 silly cache add parsed spec Result {
+147 silly cache add   raw: 'dom-event@~1.0.0',
+147 silly cache add   scope: null,
+147 silly cache add   name: 'dom-event',
+147 silly cache add   rawSpec: '~1.0.0',
+147 silly cache add   spec: '>=1.0.0 <1.1.0',
+147 silly cache add   type: 'range' }
+148 silly addNamed dom-event@>=1.0.0 <1.1.0
+149 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for dom-event
+150 silly addNameRange { name: 'dom-event', range: '>=1.0.0 <1.1.0', hasData: false }
+151 silly mapToRegistry name dom-event
+152 silly mapToRegistry using default registry
+153 silly mapToRegistry registry https://registry.npmjs.org/
+154 silly mapToRegistry data Result {
+154 silly mapToRegistry   raw: 'dom-event',
+154 silly mapToRegistry   scope: null,
+154 silly mapToRegistry   name: 'dom-event',
+154 silly mapToRegistry   rawSpec: '',
+154 silly mapToRegistry   spec: 'latest',
+154 silly mapToRegistry   type: 'tag' }
+155 silly mapToRegistry uri https://registry.npmjs.org/dom-event
+156 verbose addNameRange registry:https://registry.npmjs.org/dom-event not in flight; fetching
+157 silly cache add args [ 'dom-select@~1.1.1', null ]
+158 verbose cache add spec dom-select@~1.1.1
+159 silly cache add parsed spec Result {
+159 silly cache add   raw: 'dom-select@~1.1.1',
+159 silly cache add   scope: null,
+159 silly cache add   name: 'dom-select',
+159 silly cache add   rawSpec: '~1.1.1',
+159 silly cache add   spec: '>=1.1.1 <1.2.0',
+159 silly cache add   type: 'range' }
+160 silly addNamed dom-select@>=1.1.1 <1.2.0
+161 verbose addNamed ">=1.1.1 <1.2.0" is a valid semver range for dom-select
+162 silly addNameRange { name: 'dom-select', range: '>=1.1.1 <1.2.0', hasData: false }
+163 silly mapToRegistry name dom-select
+164 silly mapToRegistry using default registry
+165 silly mapToRegistry registry https://registry.npmjs.org/
+166 silly mapToRegistry data Result {
+166 silly mapToRegistry   raw: 'dom-select',
+166 silly mapToRegistry   scope: null,
+166 silly mapToRegistry   name: 'dom-select',
+166 silly mapToRegistry   rawSpec: '',
+166 silly mapToRegistry   spec: 'latest',
+166 silly mapToRegistry   type: 'tag' }
+167 silly mapToRegistry uri https://registry.npmjs.org/dom-select
+168 verbose addNameRange registry:https://registry.npmjs.org/dom-select not in flight; fetching
+169 silly cache add args [ 'dom-style@~1.0.0', null ]
+170 verbose cache add spec dom-style@~1.0.0
+171 silly cache add parsed spec Result {
+171 silly cache add   raw: 'dom-style@~1.0.0',
+171 silly cache add   scope: null,
+171 silly cache add   name: 'dom-style',
+171 silly cache add   rawSpec: '~1.0.0',
+171 silly cache add   spec: '>=1.0.0 <1.1.0',
+171 silly cache add   type: 'range' }
+172 silly addNamed dom-style@>=1.0.0 <1.1.0
+173 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for dom-style
+174 silly addNameRange { name: 'dom-style', range: '>=1.0.0 <1.1.0', hasData: false }
+175 silly mapToRegistry name dom-style
+176 silly mapToRegistry using default registry
+177 silly mapToRegistry registry https://registry.npmjs.org/
+178 silly mapToRegistry data Result {
+178 silly mapToRegistry   raw: 'dom-style',
+178 silly mapToRegistry   scope: null,
+178 silly mapToRegistry   name: 'dom-style',
+178 silly mapToRegistry   rawSpec: '',
+178 silly mapToRegistry   spec: 'latest',
+178 silly mapToRegistry   type: 'tag' }
+179 silly mapToRegistry uri https://registry.npmjs.org/dom-style
+180 verbose addNameRange registry:https://registry.npmjs.org/dom-style not in flight; fetching
+181 silly cache add args [ 'dom-tree@~1.0.0', null ]
+182 verbose cache add spec dom-tree@~1.0.0
+183 silly cache add parsed spec Result {
+183 silly cache add   raw: 'dom-tree@~1.0.0',
+183 silly cache add   scope: null,
+183 silly cache add   name: 'dom-tree',
+183 silly cache add   rawSpec: '~1.0.0',
+183 silly cache add   spec: '>=1.0.0 <1.1.0',
+183 silly cache add   type: 'range' }
+184 silly addNamed dom-tree@>=1.0.0 <1.1.0
+185 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for dom-tree
+186 silly addNameRange { name: 'dom-tree', range: '>=1.0.0 <1.1.0', hasData: false }
+187 silly mapToRegistry name dom-tree
+188 silly mapToRegistry using default registry
+189 silly mapToRegistry registry https://registry.npmjs.org/
+190 silly mapToRegistry data Result {
+190 silly mapToRegistry   raw: 'dom-tree',
+190 silly mapToRegistry   scope: null,
+190 silly mapToRegistry   name: 'dom-tree',
+190 silly mapToRegistry   rawSpec: '',
+190 silly mapToRegistry   spec: 'latest',
+190 silly mapToRegistry   type: 'tag' }
+191 silly mapToRegistry uri https://registry.npmjs.org/dom-tree
+192 verbose addNameRange registry:https://registry.npmjs.org/dom-tree not in flight; fetching
+193 silly cache add args [ 'dom-value@~1.0.1', null ]
+194 verbose cache add spec dom-value@~1.0.1
+195 silly cache add parsed spec Result {
+195 silly cache add   raw: 'dom-value@~1.0.1',
+195 silly cache add   scope: null,
+195 silly cache add   name: 'dom-value',
+195 silly cache add   rawSpec: '~1.0.1',
+195 silly cache add   spec: '>=1.0.1 <1.1.0',
+195 silly cache add   type: 'range' }
+196 silly addNamed dom-value@>=1.0.1 <1.1.0
+197 verbose addNamed ">=1.0.1 <1.1.0" is a valid semver range for dom-value
+198 silly addNameRange { name: 'dom-value', range: '>=1.0.1 <1.1.0', hasData: false }
+199 silly mapToRegistry name dom-value
+200 silly mapToRegistry using default registry
+201 silly mapToRegistry registry https://registry.npmjs.org/
+202 silly mapToRegistry data Result {
+202 silly mapToRegistry   raw: 'dom-value',
+202 silly mapToRegistry   scope: null,
+202 silly mapToRegistry   name: 'dom-value',
+202 silly mapToRegistry   rawSpec: '',
+202 silly mapToRegistry   spec: 'latest',
+202 silly mapToRegistry   type: 'tag' }
+203 silly mapToRegistry uri https://registry.npmjs.org/dom-value
+204 verbose addNameRange registry:https://registry.npmjs.org/dom-value not in flight; fetching
+205 silly cache add args [ 'format-text@0.0.x', null ]
+206 verbose cache add spec format-text@0.0.x
+207 silly cache add parsed spec Result {
+207 silly cache add   raw: 'format-text@0.0.x',
+207 silly cache add   scope: null,
+207 silly cache add   name: 'format-text',
+207 silly cache add   rawSpec: '0.0.x',
+207 silly cache add   spec: '>=0.0.0 <0.1.0',
+207 silly cache add   type: 'range' }
+208 silly addNamed format-text@>=0.0.0 <0.1.0
+209 verbose addNamed ">=0.0.0 <0.1.0" is a valid semver range for format-text
+210 silly addNameRange { name: 'format-text', range: '>=0.0.0 <0.1.0', hasData: false }
+211 silly mapToRegistry name format-text
+212 silly mapToRegistry using default registry
+213 silly mapToRegistry registry https://registry.npmjs.org/
+214 silly mapToRegistry data Result {
+214 silly mapToRegistry   raw: 'format-text',
+214 silly mapToRegistry   scope: null,
+214 silly mapToRegistry   name: 'format-text',
+214 silly mapToRegistry   rawSpec: '',
+214 silly mapToRegistry   spec: 'latest',
+214 silly mapToRegistry   type: 'tag' }
+215 silly mapToRegistry uri https://registry.npmjs.org/format-text
+216 verbose addNameRange registry:https://registry.npmjs.org/format-text not in flight; fetching
+217 silly cache add args [ 'key-event@~1.0.0', null ]
+218 verbose cache add spec key-event@~1.0.0
+219 silly cache add parsed spec Result {
+219 silly cache add   raw: 'key-event@~1.0.0',
+219 silly cache add   scope: null,
+219 silly cache add   name: 'key-event',
+219 silly cache add   rawSpec: '~1.0.0',
+219 silly cache add   spec: '>=1.0.0 <1.1.0',
+219 silly cache add   type: 'range' }
+220 silly addNamed key-event@>=1.0.0 <1.1.0
+221 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for key-event
+222 silly addNameRange { name: 'key-event', range: '>=1.0.0 <1.1.0', hasData: false }
+223 silly mapToRegistry name key-event
+224 silly mapToRegistry using default registry
+225 silly mapToRegistry registry https://registry.npmjs.org/
+226 silly mapToRegistry data Result {
+226 silly mapToRegistry   raw: 'key-event',
+226 silly mapToRegistry   scope: null,
+226 silly mapToRegistry   name: 'key-event',
+226 silly mapToRegistry   rawSpec: '',
+226 silly mapToRegistry   spec: 'latest',
+226 silly mapToRegistry   type: 'tag' }
+227 silly mapToRegistry uri https://registry.npmjs.org/key-event
+228 verbose addNameRange registry:https://registry.npmjs.org/key-event not in flight; fetching
+229 silly cache add args [ 'new-chain@github:azer/new-chain', null ]
+230 verbose cache add spec new-chain@github:azer/new-chain
+231 silly cache add args [ 'new-element@~1.0.0', null ]
+232 verbose cache add spec new-element@~1.0.0
+233 silly cache add parsed spec Result {
+233 silly cache add   raw: 'new-element@~1.0.0',
+233 silly cache add   scope: null,
+233 silly cache add   name: 'new-element',
+233 silly cache add   rawSpec: '~1.0.0',
+233 silly cache add   spec: '>=1.0.0 <1.1.0',
+233 silly cache add   type: 'range' }
+234 silly addNamed new-element@>=1.0.0 <1.1.0
+235 verbose addNamed ">=1.0.0 <1.1.0" is a valid semver range for new-element
+236 silly addNameRange { name: 'new-element', range: '>=1.0.0 <1.1.0', hasData: false }
+237 silly mapToRegistry name new-element
+238 silly mapToRegistry using default registry
+239 silly mapToRegistry registry https://registry.npmjs.org/
+240 silly mapToRegistry data Result {
+240 silly mapToRegistry   raw: 'new-element',
+240 silly mapToRegistry   scope: null,
+240 silly mapToRegistry   name: 'new-element',
+240 silly mapToRegistry   rawSpec: '',
+240 silly mapToRegistry   spec: 'latest',
+240 silly mapToRegistry   type: 'tag' }
+241 silly mapToRegistry uri https://registry.npmjs.org/new-element
+242 verbose addNameRange registry:https://registry.npmjs.org/new-element not in flight; fetching
+243 silly cache add args [ 'siblings@^1.0.1', null ]
+244 verbose cache add spec siblings@^1.0.1
+245 silly cache add parsed spec Result {
+245 silly cache add   raw: 'siblings@^1.0.1',
+245 silly cache add   scope: null,
+245 silly cache add   name: 'siblings',
+245 silly cache add   rawSpec: '^1.0.1',
+245 silly cache add   spec: '>=1.0.1 <2.0.0',
+245 silly cache add   type: 'range' }
+246 silly addNamed siblings@>=1.0.1 <2.0.0
+247 verbose addNamed ">=1.0.1 <2.0.0" is a valid semver range for siblings
+248 silly addNameRange { name: 'siblings', range: '>=1.0.1 <2.0.0', hasData: false }
+249 silly mapToRegistry name siblings
+250 silly mapToRegistry using default registry
+251 silly mapToRegistry registry https://registry.npmjs.org/
+252 silly mapToRegistry data Result {
+252 silly mapToRegistry   raw: 'siblings',
+252 silly mapToRegistry   scope: null,
+252 silly mapToRegistry   name: 'siblings',
+252 silly mapToRegistry   rawSpec: '',
+252 silly mapToRegistry   spec: 'latest',
+252 silly mapToRegistry   type: 'tag' }
+253 silly mapToRegistry uri https://registry.npmjs.org/siblings
+254 verbose addNameRange registry:https://registry.npmjs.org/siblings not in flight; fetching
+255 silly cache add args [ 'trim@0.0.1', null ]
+256 verbose cache add spec trim@0.0.1
+257 silly cache add parsed spec Result {
+257 silly cache add   raw: 'trim@0.0.1',
+257 silly cache add   scope: null,
+257 silly cache add   name: 'trim',
+257 silly cache add   rawSpec: '0.0.1',
+257 silly cache add   spec: '0.0.1',
+257 silly cache add   type: 'version' }
+258 silly addNamed trim@0.0.1
+259 verbose addNamed "0.0.1" is a plain semver version for trim
+260 silly mapToRegistry name trim
+261 silly mapToRegistry using default registry
+262 silly mapToRegistry registry https://registry.npmjs.org/
+263 silly mapToRegistry data Result {
+263 silly mapToRegistry   raw: 'trim',
+263 silly mapToRegistry   scope: null,
+263 silly mapToRegistry   name: 'trim',
+263 silly mapToRegistry   rawSpec: '',
+263 silly mapToRegistry   spec: 'latest',
+263 silly mapToRegistry   type: 'tag' }
+264 silly mapToRegistry uri https://registry.npmjs.org/trim
+265 verbose addNameVersion registry:https://registry.npmjs.org/trim not in flight; fetching
+266 silly cache add parsed spec Result {
+266 silly cache add   raw: 'new-chain@github:azer/new-chain',
+266 silly cache add   scope: null,
+266 silly cache add   name: 'new-chain',
+266 silly cache add   rawSpec: 'github:azer/new-chain',
+266 silly cache add   spec: 'github:azer/new-chain',
+266 silly cache add   type: 'hosted',
+266 silly cache add   hosted:
+266 silly cache add    { type: 'github',
+266 silly cache add      ssh: 'git@github.com:azer/new-chain.git',
+266 silly cache add      sshUrl: 'git+ssh://git@github.com/azer/new-chain.git',
+266 silly cache add      httpsUrl: 'git+https://github.com/azer/new-chain.git',
+266 silly cache add      gitUrl: 'git://github.com/azer/new-chain.git',
+266 silly cache add      shortcut: 'github:azer/new-chain',
+266 silly cache add      directUrl: 'https://raw.githubusercontent.com/azer/new-chain/master/package.json' } }
+267 verbose addRemoteGit caching github:azer/new-chain
+268 verbose addRemoteGit azer/new-chain is a repository hosted by github
+269 silly tryGitProto attempting to clone git://github.com/azer/new-chain.git
+270 silly tryClone cloning azer/new-chain via git://github.com/azer/new-chain.git
+271 verbose tryClone git-github-com-azer-new-chain-git-272bc218 not in flight; caching
+272 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+273 verbose request uri https://registry.npmjs.org/discore-closest
+274 verbose request no auth needed
+275 info attempt registry request try #1 at 09:45:22
+276 verbose etag W/"aac2d1fedf95b1f625bbdba798942295"
+277 verbose lastModified Sat, 26 May 2018 22:10:54 GMT
+278 http request GET https://registry.npmjs.org/discore-closest
+279 verbose request uri https://registry.npmjs.org/dom-event
+280 verbose request no auth needed
+281 info attempt registry request try #1 at 09:45:22
+282 verbose etag W/"bfa6bbc38ef0503685df65c1b8aaebe1"
+283 verbose lastModified Sat, 26 May 2018 22:20:37 GMT
+284 http request GET https://registry.npmjs.org/dom-event
+285 verbose request uri https://registry.npmjs.org/dom-classes
+286 verbose request no auth needed
+287 info attempt registry request try #1 at 09:45:22
+288 verbose etag W/"cc2135c61f701e2bfad45ae1de5fc784"
+289 verbose lastModified Sat, 26 May 2018 22:20:28 GMT
+290 http request GET https://registry.npmjs.org/dom-classes
+291 verbose request uri https://registry.npmjs.org/component-delegate
+292 verbose request no auth needed
+293 info attempt registry request try #1 at 09:45:22
+294 verbose etag W/"1201598b89a22546c111b14427c2c9a3"
+295 verbose lastModified Sat, 26 May 2018 20:24:25 GMT
+296 http request GET https://registry.npmjs.org/component-delegate
+297 verbose request uri https://registry.npmjs.org/dom-select
+298 verbose request no auth needed
+299 info attempt registry request try #1 at 09:45:22
+300 verbose etag W/"5ada824ede477f537d14428b35f612bd"
+301 verbose lastModified Sat, 26 May 2018 22:20:55 GMT
+302 http request GET https://registry.npmjs.org/dom-select
+303 verbose request uri https://registry.npmjs.org/dom-tree
+304 verbose request no auth needed
+305 info attempt registry request try #1 at 09:45:22
+306 verbose etag W/"8ecfce240c907028afd7f1f85ba24816"
+307 verbose lastModified Sat, 26 May 2018 22:21:01 GMT
+308 http request GET https://registry.npmjs.org/dom-tree
+309 verbose request uri https://registry.npmjs.org/dom-value
+310 verbose request no auth needed
+311 info attempt registry request try #1 at 09:45:22
+312 verbose etag W/"2c8ee15fca7ad57611d24d0dfe8164ce"
+313 verbose lastModified Sat, 26 May 2018 22:21:03 GMT
+314 http request GET https://registry.npmjs.org/dom-value
+315 verbose request uri https://registry.npmjs.org/key-event
+316 verbose request no auth needed
+317 info attempt registry request try #1 at 09:45:22
+318 verbose etag W/"f18f453e38166dbbed80bd7f83b33e32"
+319 verbose lastModified Sun, 27 May 2018 06:02:08 GMT
+320 http request GET https://registry.npmjs.org/key-event
+321 verbose request uri https://registry.npmjs.org/format-text
+322 verbose request no auth needed
+323 info attempt registry request try #1 at 09:45:22
+324 verbose etag W/"fe6734698908ae859e5024ebe3477af2"
+325 verbose lastModified Sun, 27 May 2018 01:07:42 GMT
+326 http request GET https://registry.npmjs.org/format-text
+327 verbose request uri https://registry.npmjs.org/dom-style
+328 verbose request no auth needed
+329 info attempt registry request try #1 at 09:45:22
+330 verbose etag W/"d1ad687dc8f4e9b16f562e1572215dc2"
+331 verbose lastModified Sat, 26 May 2018 22:20:57 GMT
+332 http request GET https://registry.npmjs.org/dom-style
+333 verbose request uri https://registry.npmjs.org/siblings
+334 verbose request no auth needed
+335 info attempt registry request try #1 at 09:45:22
+336 verbose etag W/"3fa87f2dc350d2893b52f983a4948d11"
+337 verbose lastModified Sun, 27 May 2018 17:15:50 GMT
+338 http request GET https://registry.npmjs.org/siblings
+339 verbose request uri https://registry.npmjs.org/new-element
+340 verbose request no auth needed
+341 info attempt registry request try #1 at 09:45:22
+342 verbose etag W/"6466276830f0dfd640c990f54051b313"
+343 verbose lastModified Sun, 27 May 2018 09:21:52 GMT
+344 http request GET https://registry.npmjs.org/new-element
+345 verbose request uri https://registry.npmjs.org/trim
+346 verbose request no auth needed
+347 info attempt registry request try #1 at 09:45:22
+348 verbose etag W/"8b51714f9387e00c62dcb41cce7f5e1e"
+349 verbose lastModified Sun, 27 May 2018 19:53:58 GMT
+350 http request GET https://registry.npmjs.org/trim
+351 http 304 https://registry.npmjs.org/discore-closest
+352 verbose headers { date: 'Fri, 01 Jun 2018 06:45:17 GMT',
+352 verbose headers   connection: 'keep-alive',
+352 verbose headers   'set-cookie': [ '__cfduid=dbe833dc722b77f2dddff723c986f19b31527835517; expires=Sat, 01-Jun-19 06:45:17 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+352 verbose headers   'cache-control': 'max-age=300',
+352 verbose headers   'cf-cache-status': 'HIT',
+352 verbose headers   'cf-ray': '423fb7735b4d63f1-FRA',
+352 verbose headers   etag: '"aac2d1fedf95b1f625bbdba798942295"',
+352 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+352 verbose headers   'last-modified': 'Sat, 26 May 2018 22:10:54 GMT',
+352 verbose headers   vary: 'accept-encoding, accept',
+352 verbose headers   server: 'cloudflare' }
+353 silly get cb [ 304,
+353 silly get   { date: 'Fri, 01 Jun 2018 06:45:17 GMT',
+353 silly get     connection: 'keep-alive',
+353 silly get     'set-cookie': [ '__cfduid=dbe833dc722b77f2dddff723c986f19b31527835517; expires=Sat, 01-Jun-19 06:45:17 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+353 silly get     'cache-control': 'max-age=300',
+353 silly get     'cf-cache-status': 'HIT',
+353 silly get     'cf-ray': '423fb7735b4d63f1-FRA',
+353 silly get     etag: '"aac2d1fedf95b1f625bbdba798942295"',
+353 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+353 silly get     'last-modified': 'Sat, 26 May 2018 22:10:54 GMT',
+353 silly get     vary: 'accept-encoding, accept',
+353 silly get     server: 'cloudflare' } ]
+354 verbose etag https://registry.npmjs.org/discore-closest from cache
+355 verbose get saving discore-closest to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\discore-closest\.cache.json
+356 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+357 silly addNameRange number 2 { name: 'discore-closest',
+357 silly addNameRange   range: '>=0.1.3 <0.2.0',
+357 silly addNameRange   hasData: true }
+358 silly addNameRange versions [ 'discore-closest', [ '0.1.2', '0.1.3', '0.2.0' ] ]
+359 silly addNamed discore-closest@0.1.3
+360 verbose addNamed "0.1.3" is a plain semver version for discore-closest
+361 warn deprecated discore-closest@0.1.3: Use 'component-closest' now instead.
+362 silly cache afterAdd discore-closest@0.1.3
+363 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\discore-closest\0.1.3\package\package.json not in flight; writing
+364 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+365 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\discore-closest\0.1.3\package\package.json written
+366 http 304 https://registry.npmjs.org/dom-event
+367 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+367 verbose headers   connection: 'keep-alive',
+367 verbose headers   'set-cookie': [ '__cfduid=d042449c05e5a0ee7e2951b0b60a01c151527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+367 verbose headers   'cache-control': 'max-age=300',
+367 verbose headers   'cf-cache-status': 'HIT',
+367 verbose headers   'cf-ray': '423fb7739d586403-FRA',
+367 verbose headers   etag: '"bfa6bbc38ef0503685df65c1b8aaebe1"',
+367 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+367 verbose headers   'last-modified': 'Sat, 26 May 2018 22:20:37 GMT',
+367 verbose headers   vary: 'accept-encoding, accept',
+367 verbose headers   server: 'cloudflare' }
+368 silly get cb [ 304,
+368 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+368 silly get     connection: 'keep-alive',
+368 silly get     'set-cookie': [ '__cfduid=d042449c05e5a0ee7e2951b0b60a01c151527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+368 silly get     'cache-control': 'max-age=300',
+368 silly get     'cf-cache-status': 'HIT',
+368 silly get     'cf-ray': '423fb7739d586403-FRA',
+368 silly get     etag: '"bfa6bbc38ef0503685df65c1b8aaebe1"',
+368 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+368 silly get     'last-modified': 'Sat, 26 May 2018 22:20:37 GMT',
+368 silly get     vary: 'accept-encoding, accept',
+368 silly get     server: 'cloudflare' } ]
+369 verbose etag https://registry.npmjs.org/dom-event from cache
+370 verbose get saving dom-event to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\dom-event\.cache.json
+371 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+372 http 304 https://registry.npmjs.org/dom-classes
+373 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+373 verbose headers   connection: 'keep-alive',
+373 verbose headers   'set-cookie': [ '__cfduid=d6fb3e98574749d8424fb9b740e7749f51527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+373 verbose headers   'cache-control': 'max-age=300',
+373 verbose headers   'cf-cache-status': 'HIT',
+373 verbose headers   'cf-ray': '423fb7739c086409-FRA',
+373 verbose headers   etag: '"cc2135c61f701e2bfad45ae1de5fc784"',
+373 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+373 verbose headers   'last-modified': 'Sat, 26 May 2018 22:20:28 GMT',
+373 verbose headers   vary: 'accept-encoding, accept',
+373 verbose headers   server: 'cloudflare' }
+374 silly get cb [ 304,
+374 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+374 silly get     connection: 'keep-alive',
+374 silly get     'set-cookie': [ '__cfduid=d6fb3e98574749d8424fb9b740e7749f51527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+374 silly get     'cache-control': 'max-age=300',
+374 silly get     'cf-cache-status': 'HIT',
+374 silly get     'cf-ray': '423fb7739c086409-FRA',
+374 silly get     etag: '"cc2135c61f701e2bfad45ae1de5fc784"',
+374 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+374 silly get     'last-modified': 'Sat, 26 May 2018 22:20:28 GMT',
+374 silly get     vary: 'accept-encoding, accept',
+374 silly get     server: 'cloudflare' } ]
+375 verbose etag https://registry.npmjs.org/dom-classes from cache
+376 verbose get saving dom-classes to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\dom-classes\.cache.json
+377 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+378 http 304 https://registry.npmjs.org/key-event
+379 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+379 verbose headers   connection: 'keep-alive',
+379 verbose headers   'set-cookie': [ '__cfduid=d45738472b853f36c856a7a183bbdd58f1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+379 verbose headers   'cache-control': 'max-age=300',
+379 verbose headers   'cf-cache-status': 'HIT',
+379 verbose headers   'cf-ray': '423fb7739d1f640f-FRA',
+379 verbose headers   etag: '"f18f453e38166dbbed80bd7f83b33e32"',
+379 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+379 verbose headers   'last-modified': 'Sun, 27 May 2018 06:02:08 GMT',
+379 verbose headers   vary: 'accept-encoding, accept',
+379 verbose headers   server: 'cloudflare' }
+380 silly get cb [ 304,
+380 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+380 silly get     connection: 'keep-alive',
+380 silly get     'set-cookie': [ '__cfduid=d45738472b853f36c856a7a183bbdd58f1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+380 silly get     'cache-control': 'max-age=300',
+380 silly get     'cf-cache-status': 'HIT',
+380 silly get     'cf-ray': '423fb7739d1f640f-FRA',
+380 silly get     etag: '"f18f453e38166dbbed80bd7f83b33e32"',
+380 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+380 silly get     'last-modified': 'Sun, 27 May 2018 06:02:08 GMT',
+380 silly get     vary: 'accept-encoding, accept',
+380 silly get     server: 'cloudflare' } ]
+381 verbose etag https://registry.npmjs.org/key-event from cache
+382 verbose get saving key-event to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\key-event\.cache.json
+383 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+384 http 304 https://registry.npmjs.org/dom-value
+385 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+385 verbose headers   connection: 'keep-alive',
+385 verbose headers   'set-cookie': [ '__cfduid=d868361c6fcbdbe7b840dce9281409b5a1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+385 verbose headers   'cache-control': 'max-age=300',
+385 verbose headers   'cf-cache-status': 'HIT',
+385 verbose headers   'cf-ray': '423fb773983663e5-FRA',
+385 verbose headers   etag: '"2c8ee15fca7ad57611d24d0dfe8164ce"',
+385 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+385 verbose headers   'last-modified': 'Sat, 26 May 2018 22:21:03 GMT',
+385 verbose headers   vary: 'accept-encoding, accept',
+385 verbose headers   server: 'cloudflare' }
+386 silly get cb [ 304,
+386 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+386 silly get     connection: 'keep-alive',
+386 silly get     'set-cookie': [ '__cfduid=d868361c6fcbdbe7b840dce9281409b5a1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+386 silly get     'cache-control': 'max-age=300',
+386 silly get     'cf-cache-status': 'HIT',
+386 silly get     'cf-ray': '423fb773983663e5-FRA',
+386 silly get     etag: '"2c8ee15fca7ad57611d24d0dfe8164ce"',
+386 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+386 silly get     'last-modified': 'Sat, 26 May 2018 22:21:03 GMT',
+386 silly get     vary: 'accept-encoding, accept',
+386 silly get     server: 'cloudflare' } ]
+387 verbose etag https://registry.npmjs.org/dom-value from cache
+388 verbose get saving dom-value to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\dom-value\.cache.json
+389 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+390 http 304 https://registry.npmjs.org/component-delegate
+391 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+391 verbose headers   connection: 'keep-alive',
+391 verbose headers   'set-cookie': [ '__cfduid=d72e035aa0864b91cda12fd54558f1f4b1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+391 verbose headers   'cache-control': 'max-age=300',
+391 verbose headers   'cf-cache-status': 'HIT',
+391 verbose headers   'cf-ray': '423fb77399b963fd-FRA',
+391 verbose headers   etag: '"1201598b89a22546c111b14427c2c9a3"',
+391 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+391 verbose headers   'last-modified': 'Sat, 26 May 2018 20:24:25 GMT',
+391 verbose headers   vary: 'accept-encoding, accept',
+391 verbose headers   server: 'cloudflare' }
+392 silly get cb [ 304,
+392 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+392 silly get     connection: 'keep-alive',
+392 silly get     'set-cookie': [ '__cfduid=d72e035aa0864b91cda12fd54558f1f4b1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+392 silly get     'cache-control': 'max-age=300',
+392 silly get     'cf-cache-status': 'HIT',
+392 silly get     'cf-ray': '423fb77399b963fd-FRA',
+392 silly get     etag: '"1201598b89a22546c111b14427c2c9a3"',
+392 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+392 silly get     'last-modified': 'Sat, 26 May 2018 20:24:25 GMT',
+392 silly get     vary: 'accept-encoding, accept',
+392 silly get     server: 'cloudflare' } ]
+393 verbose etag https://registry.npmjs.org/component-delegate from cache
+394 verbose get saving component-delegate to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\component-delegate\.cache.json
+395 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+396 http 304 https://registry.npmjs.org/dom-style
+397 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+397 verbose headers   connection: 'keep-alive',
+397 verbose headers   'set-cookie': [ '__cfduid=d868361c6fcbdbe7b840dce9281409b5a1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+397 verbose headers   'cache-control': 'max-age=300',
+397 verbose headers   'cf-cache-status': 'HIT',
+397 verbose headers   'cf-ray': '423fb773983863e5-FRA',
+397 verbose headers   etag: '"d1ad687dc8f4e9b16f562e1572215dc2"',
+397 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+397 verbose headers   'last-modified': 'Sat, 26 May 2018 22:20:57 GMT',
+397 verbose headers   vary: 'accept-encoding, accept',
+397 verbose headers   server: 'cloudflare' }
+398 silly get cb [ 304,
+398 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+398 silly get     connection: 'keep-alive',
+398 silly get     'set-cookie': [ '__cfduid=d868361c6fcbdbe7b840dce9281409b5a1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+398 silly get     'cache-control': 'max-age=300',
+398 silly get     'cf-cache-status': 'HIT',
+398 silly get     'cf-ray': '423fb773983863e5-FRA',
+398 silly get     etag: '"d1ad687dc8f4e9b16f562e1572215dc2"',
+398 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+398 silly get     'last-modified': 'Sat, 26 May 2018 22:20:57 GMT',
+398 silly get     vary: 'accept-encoding, accept',
+398 silly get     server: 'cloudflare' } ]
+399 verbose etag https://registry.npmjs.org/dom-style from cache
+400 verbose get saving dom-style to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\dom-style\.cache.json
+401 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+402 http 304 https://registry.npmjs.org/format-text
+403 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+403 verbose headers   connection: 'keep-alive',
+403 verbose headers   'set-cookie': [ '__cfduid=de101199fde8067cb0ad0895a4ff78aab1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+403 verbose headers   'cache-control': 'max-age=300',
+403 verbose headers   'cf-cache-status': 'HIT',
+403 verbose headers   'cf-ray': '423fb7739f4463eb-FRA',
+403 verbose headers   etag: '"fe6734698908ae859e5024ebe3477af2"',
+403 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+403 verbose headers   'last-modified': 'Sun, 27 May 2018 01:07:42 GMT',
+403 verbose headers   vary: 'accept-encoding, accept',
+403 verbose headers   server: 'cloudflare' }
+404 silly get cb [ 304,
+404 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+404 silly get     connection: 'keep-alive',
+404 silly get     'set-cookie': [ '__cfduid=de101199fde8067cb0ad0895a4ff78aab1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+404 silly get     'cache-control': 'max-age=300',
+404 silly get     'cf-cache-status': 'HIT',
+404 silly get     'cf-ray': '423fb7739f4463eb-FRA',
+404 silly get     etag: '"fe6734698908ae859e5024ebe3477af2"',
+404 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+404 silly get     'last-modified': 'Sun, 27 May 2018 01:07:42 GMT',
+404 silly get     vary: 'accept-encoding, accept',
+404 silly get     server: 'cloudflare' } ]
+405 verbose etag https://registry.npmjs.org/format-text from cache
+406 verbose get saving format-text to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\format-text\.cache.json
+407 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+408 http 304 https://registry.npmjs.org/dom-select
+409 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+409 verbose headers   connection: 'keep-alive',
+409 verbose headers   'set-cookie': [ '__cfduid=da8d0d0eb503da641f2aca25d3d5044611527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+409 verbose headers   'cache-control': 'max-age=300',
+409 verbose headers   'cf-cache-status': 'HIT',
+409 verbose headers   'cf-ray': '423fb77398ff641b-FRA',
+409 verbose headers   etag: '"5ada824ede477f537d14428b35f612bd"',
+409 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+409 verbose headers   'last-modified': 'Sat, 26 May 2018 22:20:55 GMT',
+409 verbose headers   vary: 'accept-encoding, accept',
+409 verbose headers   server: 'cloudflare' }
+410 silly get cb [ 304,
+410 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+410 silly get     connection: 'keep-alive',
+410 silly get     'set-cookie': [ '__cfduid=da8d0d0eb503da641f2aca25d3d5044611527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+410 silly get     'cache-control': 'max-age=300',
+410 silly get     'cf-cache-status': 'HIT',
+410 silly get     'cf-ray': '423fb77398ff641b-FRA',
+410 silly get     etag: '"5ada824ede477f537d14428b35f612bd"',
+410 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+410 silly get     'last-modified': 'Sat, 26 May 2018 22:20:55 GMT',
+410 silly get     vary: 'accept-encoding, accept',
+410 silly get     server: 'cloudflare' } ]
+411 verbose etag https://registry.npmjs.org/dom-select from cache
+412 verbose get saving dom-select to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\dom-select\.cache.json
+413 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+414 http 304 https://registry.npmjs.org/siblings
+415 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+415 verbose headers   connection: 'keep-alive',
+415 verbose headers   'set-cookie': [ '__cfduid=d05d7873443e4c7089cc4a539031d15c51527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+415 verbose headers   'cache-control': 'max-age=300',
+415 verbose headers   'cf-cache-status': 'HIT',
+415 verbose headers   'cf-ray': '423fb7739e716433-FRA',
+415 verbose headers   etag: '"3fa87f2dc350d2893b52f983a4948d11"',
+415 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+415 verbose headers   'last-modified': 'Sun, 27 May 2018 17:15:50 GMT',
+415 verbose headers   vary: 'accept-encoding, accept',
+415 verbose headers   server: 'cloudflare' }
+416 silly get cb [ 304,
+416 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+416 silly get     connection: 'keep-alive',
+416 silly get     'set-cookie': [ '__cfduid=d05d7873443e4c7089cc4a539031d15c51527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+416 silly get     'cache-control': 'max-age=300',
+416 silly get     'cf-cache-status': 'HIT',
+416 silly get     'cf-ray': '423fb7739e716433-FRA',
+416 silly get     etag: '"3fa87f2dc350d2893b52f983a4948d11"',
+416 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+416 silly get     'last-modified': 'Sun, 27 May 2018 17:15:50 GMT',
+416 silly get     vary: 'accept-encoding, accept',
+416 silly get     server: 'cloudflare' } ]
+417 verbose etag https://registry.npmjs.org/siblings from cache
+418 verbose get saving siblings to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\siblings\.cache.json
+419 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+420 http 304 https://registry.npmjs.org/dom-tree
+421 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+421 verbose headers   connection: 'keep-alive',
+421 verbose headers   'set-cookie': [ '__cfduid=d868361c6fcbdbe7b840dce9281409b5a1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+421 verbose headers   'cache-control': 'max-age=300',
+421 verbose headers   'cf-cache-status': 'HIT',
+421 verbose headers   'cf-ray': '423fb773983763e5-FRA',
+421 verbose headers   etag: '"8ecfce240c907028afd7f1f85ba24816"',
+421 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+421 verbose headers   'last-modified': 'Sat, 26 May 2018 22:21:01 GMT',
+421 verbose headers   vary: 'accept-encoding, accept',
+421 verbose headers   server: 'cloudflare' }
+422 silly get cb [ 304,
+422 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+422 silly get     connection: 'keep-alive',
+422 silly get     'set-cookie': [ '__cfduid=d868361c6fcbdbe7b840dce9281409b5a1527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+422 silly get     'cache-control': 'max-age=300',
+422 silly get     'cf-cache-status': 'HIT',
+422 silly get     'cf-ray': '423fb773983763e5-FRA',
+422 silly get     etag: '"8ecfce240c907028afd7f1f85ba24816"',
+422 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+422 silly get     'last-modified': 'Sat, 26 May 2018 22:21:01 GMT',
+422 silly get     vary: 'accept-encoding, accept',
+422 silly get     server: 'cloudflare' } ]
+423 verbose etag https://registry.npmjs.org/dom-tree from cache
+424 verbose get saving dom-tree to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\dom-tree\.cache.json
+425 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+426 http 304 https://registry.npmjs.org/new-element
+427 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+427 verbose headers   connection: 'keep-alive',
+427 verbose headers   'set-cookie': [ '__cfduid=d840539a3144cc97bb9cfec957ab1fb481527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+427 verbose headers   'cache-control': 'max-age=300',
+427 verbose headers   'cf-cache-status': 'HIT',
+427 verbose headers   'cf-ray': '423fb773aba063f1-FRA',
+427 verbose headers   etag: '"6466276830f0dfd640c990f54051b313"',
+427 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+427 verbose headers   'last-modified': 'Sun, 27 May 2018 09:21:52 GMT',
+427 verbose headers   vary: 'accept-encoding, accept',
+427 verbose headers   server: 'cloudflare' }
+428 silly get cb [ 304,
+428 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+428 silly get     connection: 'keep-alive',
+428 silly get     'set-cookie': [ '__cfduid=d840539a3144cc97bb9cfec957ab1fb481527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+428 silly get     'cache-control': 'max-age=300',
+428 silly get     'cf-cache-status': 'HIT',
+428 silly get     'cf-ray': '423fb773aba063f1-FRA',
+428 silly get     etag: '"6466276830f0dfd640c990f54051b313"',
+428 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+428 silly get     'last-modified': 'Sun, 27 May 2018 09:21:52 GMT',
+428 silly get     vary: 'accept-encoding, accept',
+428 silly get     server: 'cloudflare' } ]
+429 verbose etag https://registry.npmjs.org/new-element from cache
+430 verbose get saving new-element to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\new-element\.cache.json
+431 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+432 silly addNameRange number 2 { name: 'dom-event', range: '>=1.0.0 <1.1.0', hasData: true }
+433 silly addNameRange versions [ 'dom-event',
+433 silly addNameRange   [ '2.0.0',
+433 silly addNameRange     '0.0.1-security',
+433 silly addNameRange     '0.0.0',
+433 silly addNameRange     '0.0.1',
+433 silly addNameRange     '0.0.2',
+433 silly addNameRange     '0.0.3',
+433 silly addNameRange     '0.0.4',
+433 silly addNameRange     '0.0.5',
+433 silly addNameRange     '1.0.0' ] ]
+434 silly addNamed dom-event@1.0.0
+435 verbose addNamed "1.0.0" is a plain semver version for dom-event
+436 http 304 https://registry.npmjs.org/trim
+437 verbose headers { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+437 verbose headers   connection: 'keep-alive',
+437 verbose headers   'set-cookie': [ '__cfduid=d07d31f2aa8113ac60a41d403d6c568911527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+437 verbose headers   'cache-control': 'max-age=300',
+437 verbose headers   'cf-cache-status': 'HIT',
+437 verbose headers   'cf-ray': '423fb773a8c063df-FRA',
+437 verbose headers   etag: '"8b51714f9387e00c62dcb41cce7f5e1e"',
+437 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+437 verbose headers   'last-modified': 'Sun, 27 May 2018 19:53:58 GMT',
+437 verbose headers   vary: 'accept-encoding, accept',
+437 verbose headers   server: 'cloudflare' }
+438 silly get cb [ 304,
+438 silly get   { date: 'Fri, 01 Jun 2018 06:45:18 GMT',
+438 silly get     connection: 'keep-alive',
+438 silly get     'set-cookie': [ '__cfduid=d07d31f2aa8113ac60a41d403d6c568911527835518; expires=Sat, 01-Jun-19 06:45:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+438 silly get     'cache-control': 'max-age=300',
+438 silly get     'cf-cache-status': 'HIT',
+438 silly get     'cf-ray': '423fb773a8c063df-FRA',
+438 silly get     etag: '"8b51714f9387e00c62dcb41cce7f5e1e"',
+438 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+438 silly get     'last-modified': 'Sun, 27 May 2018 19:53:58 GMT',
+438 silly get     vary: 'accept-encoding, accept',
+438 silly get     server: 'cloudflare' } ]
+439 verbose etag https://registry.npmjs.org/trim from cache
+440 verbose get saving trim to C:\Users\franz\AppData\Roaming\npm-cache\registry.npmjs.org\trim\.cache.json
+441 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+442 silly addNameRange number 2 { name: 'dom-classes', range: '>=0.0.0 <0.1.0', hasData: true }
+443 silly addNameRange versions [ 'dom-classes',
+443 silly addNameRange   [ '2.0.0', '0.0.1-security', '0.0.0', '0.0.1', '1.0.0' ] ]
+444 silly addNamed dom-classes@0.0.1
+445 verbose addNamed "0.0.1" is a plain semver version for dom-classes
+446 silly addNameRange number 2 { name: 'key-event', range: '>=1.0.0 <1.1.0', hasData: true }
+447 silly addNameRange versions [ 'key-event', [ '2.0.0', '0.0.1-security', '0.0.0', '1.0.0' ] ]
+448 silly addNamed key-event@1.0.0
+449 verbose addNamed "1.0.0" is a plain semver version for key-event
+450 silly addNameRange number 2 { name: 'dom-value', range: '>=1.0.1 <1.1.0', hasData: true }
+451 silly addNameRange versions [ 'dom-value',
+451 silly addNameRange   [ '2.0.0', '0.0.1-security', '0.0.0', '1.0.0', '1.0.1' ] ]
+452 silly addNamed dom-value@1.0.1
+453 verbose addNamed "1.0.1" is a plain semver version for dom-value
+454 silly addNameRange number 2 { name: 'dom-style', range: '>=1.0.0 <1.1.0', hasData: true }
+455 silly addNameRange versions [ 'dom-style',
+455 silly addNameRange   [ '2.0.0', '0.0.1-security', '0.0.1', '0.0.2', '0.0.3', '1.0.0' ] ]
+456 silly addNamed dom-style@1.0.0
+457 verbose addNamed "1.0.0" is a plain semver version for dom-style
+458 silly cache afterAdd dom-event@1.0.0
+459 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-event\1.0.0\package\package.json not in flight; writing
+460 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+461 silly cache afterAdd key-event@1.0.0
+462 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\key-event\1.0.0\package\package.json not in flight; writing
+463 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+464 silly cache afterAdd dom-classes@0.0.1
+465 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-classes\0.0.1\package\package.json not in flight; writing
+466 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+467 silly cache afterAdd dom-value@1.0.1
+468 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-value\1.0.1\package\package.json not in flight; writing
+469 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+470 silly addNameRange number 2 { name: 'format-text', range: '>=0.0.0 <0.1.0', hasData: true }
+471 silly addNameRange versions [ 'format-text',
+471 silly addNameRange   [ '2.0.0', '0.0.1-security', '0.0.1', '0.0.2', '0.0.3' ] ]
+472 silly addNamed format-text@0.0.3
+473 verbose addNamed "0.0.3" is a plain semver version for format-text
+474 silly addNameRange number 2 { name: 'dom-select', range: '>=1.1.1 <1.2.0', hasData: true }
+475 silly addNameRange versions [ 'dom-select',
+475 silly addNameRange   [ '2.0.0',
+475 silly addNameRange     '0.0.1-security',
+475 silly addNameRange     '0.0.0',
+475 silly addNameRange     '1.0.0',
+475 silly addNameRange     '1.0.1',
+475 silly addNameRange     '1.1.0',
+475 silly addNameRange     '1.1.1' ] ]
+476 silly addNamed dom-select@1.1.1
+477 verbose addNamed "1.1.1" is a plain semver version for dom-select
+478 silly cache afterAdd dom-style@1.0.0
+479 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-style\1.0.0\package\package.json not in flight; writing
+480 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+481 silly cache afterAdd component-delegate@0.2.2
+482 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\component-delegate\0.2.2\package\package.json not in flight; writing
+483 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+484 silly addNameRange number 2 { name: 'siblings', range: '>=1.0.1 <2.0.0', hasData: true }
+485 silly addNameRange versions [ 'siblings', [ '0.0.1', '1.0.0', '1.0.1' ] ]
+486 silly addNamed siblings@1.0.1
+487 verbose addNamed "1.0.1" is a plain semver version for siblings
+488 silly addNameRange number 2 { name: 'new-element', range: '>=1.0.0 <1.1.0', hasData: true }
+489 silly addNameRange versions [ 'new-element',
+489 silly addNameRange   [ '2.0.0', '0.0.1-security', '0.0.0', '0.0.1', '0.0.2', '1.0.0' ] ]
+490 silly addNamed new-element@1.0.0
+491 verbose addNamed "1.0.0" is a plain semver version for new-element
+492 silly addNameRange number 2 { name: 'dom-tree', range: '>=1.0.0 <1.1.0', hasData: true }
+493 silly addNameRange versions [ 'dom-tree',
+493 silly addNameRange   [ '2.0.0', '0.0.1-security', '0.0.0', '0.0.1', '1.0.0' ] ]
+494 silly addNamed dom-tree@1.0.0
+495 verbose addNamed "1.0.0" is a plain semver version for dom-tree
+496 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-event\1.0.0\package\package.json written
+497 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-classes\0.0.1\package\package.json written
+498 silly cache afterAdd format-text@0.0.3
+499 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\format-text\0.0.3\package\package.json not in flight; writing
+500 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+501 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-value\1.0.1\package\package.json written
+502 silly cache afterAdd dom-select@1.1.1
+503 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-select\1.1.1\package\package.json not in flight; writing
+504 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+505 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\key-event\1.0.0\package\package.json written
+506 silly cache afterAdd siblings@1.0.1
+507 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\siblings\1.0.1\package\package.json not in flight; writing
+508 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+509 silly cache afterAdd trim@0.0.1
+510 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\trim\0.0.1\package\package.json not in flight; writing
+511 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+512 silly cache afterAdd new-element@1.0.0
+513 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\new-element\1.0.0\package\package.json not in flight; writing
+514 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+515 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-style\1.0.0\package\package.json written
+516 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\component-delegate\0.2.2\package\package.json written
+517 silly cache afterAdd dom-tree@1.0.0
+518 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-tree\1.0.0\package\package.json not in flight; writing
+519 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+520 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\format-text\0.0.3\package\package.json written
+521 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-select\1.1.1\package\package.json written
+522 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\siblings\1.0.1\package\package.json written
+523 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\trim\0.0.1\package\package.json written
+524 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\new-element\1.0.0\package\package.json written
+525 verbose afterAdd C:\Users\franz\AppData\Roaming\npm-cache\dom-tree\1.0.0\package\package.json written
+526 warn addRemoteGit Error: not found: git
+526 warn addRemoteGit     at F (C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:63:19)
+526 warn addRemoteGit     at E (C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:72:29)
+526 warn addRemoteGit     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:81:16
+526 warn addRemoteGit     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\node_modules\isexe\index.js:44:5
+526 warn addRemoteGit     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\node_modules\isexe\windows.js:29:5
+526 warn addRemoteGit     at FSReqWrap.oncomplete (fs.js:82:15)
+526 warn addRemoteGit  azer/new-chain resetting remote C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-272bc218 because of error: { [Error: not found: git] code: 'ENOGIT' }
+527 info resetRemote resetting C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-272bc218 for azer/new-chain
+528 silly gentlyRm C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-272bc218 is being purged
+529 verbose gentlyRm don't care about contents; nuking C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-272bc218
+530 silly vacuum-fs purging C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-272bc218
+531 silly vacuum-fs quitting because other entries in C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes
+532 error git clone --template=C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git://github.com/azer/new-chain.git C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-272bc218: undefined
+532 error git clone --template=C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git://github.com/azer/new-chain.git C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-272bc218: undefined
+533 silly tryHTTPS attempting to clone git+https://github.com/azer/new-chain.git
+534 silly tryClone cloning azer/new-chain via git+https://github.com/azer/new-chain.git
+535 verbose tryClone https-github-com-azer-new-chain-git-150d9a79 not in flight; caching
+536 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+537 warn addRemoteGit Error: not found: git
+537 warn addRemoteGit     at F (C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:63:19)
+537 warn addRemoteGit     at E (C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:72:29)
+537 warn addRemoteGit     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:81:16
+537 warn addRemoteGit     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\node_modules\isexe\index.js:44:5
+537 warn addRemoteGit     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\node_modules\isexe\windows.js:29:5
+537 warn addRemoteGit     at FSReqWrap.oncomplete (fs.js:82:15)
+537 warn addRemoteGit  azer/new-chain resetting remote C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\https-github-com-azer-new-chain-git-150d9a79 because of error: { [Error: not found: git] code: 'ENOGIT' }
+538 info resetRemote resetting C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\https-github-com-azer-new-chain-git-150d9a79 for azer/new-chain
+539 silly gentlyRm C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\https-github-com-azer-new-chain-git-150d9a79 is being purged
+540 verbose gentlyRm don't care about contents; nuking C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\https-github-com-azer-new-chain-git-150d9a79
+541 silly vacuum-fs purging C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\https-github-com-azer-new-chain-git-150d9a79
+542 silly vacuum-fs quitting because other entries in C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes
+543 error git clone --template=C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror https://github.com/azer/new-chain.git C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\https-github-com-azer-new-chain-git-150d9a79: undefined
+543 error git clone --template=C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror https://github.com/azer/new-chain.git C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\https-github-com-azer-new-chain-git-150d9a79: undefined
+544 silly trySSH attempting to clone git@github.com:azer/new-chain.git
+545 silly tryClone cloning azer/new-chain via git@github.com:azer/new-chain.git
+546 verbose tryClone git-github-com-azer-new-chain-git-de4adfd8 not in flight; caching
+547 verbose correctMkdir C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes correctMkdir not in flight; initializing
+548 warn addRemoteGit Error: not found: git
+548 warn addRemoteGit     at F (C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:63:19)
+548 warn addRemoteGit     at E (C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:72:29)
+548 warn addRemoteGit     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:81:16
+548 warn addRemoteGit     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\node_modules\isexe\index.js:44:5
+548 warn addRemoteGit     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\node_modules\isexe\windows.js:29:5
+548 warn addRemoteGit     at FSReqWrap.oncomplete (fs.js:82:15)
+548 warn addRemoteGit  azer/new-chain resetting remote C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-de4adfd8 because of error: { [Error: not found: git] code: 'ENOGIT' }
+549 info resetRemote resetting C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-de4adfd8 for azer/new-chain
+550 silly gentlyRm C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-de4adfd8 is being purged
+551 verbose gentlyRm don't care about contents; nuking C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-de4adfd8
+552 silly vacuum-fs purging C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-de4adfd8
+553 silly vacuum-fs quitting because other entries in C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes
+554 error git clone --template=C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:azer/new-chain.git C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-de4adfd8: undefined
+554 error git clone --template=C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\_templates --mirror git@github.com:azer/new-chain.git C:\Users\franz\AppData\Roaming\npm-cache\_git-remotes\git-github-com-azer-new-chain-git-de4adfd8: undefined
+555 verbose about to build C:\Users\franz\node_modules\domquery
+556 verbose unlock done using C:\Users\franz\AppData\Roaming\npm-cache\_locks\domquery-c563f493f4a43da1.lock for C:\Users\franz\node_modules\domquery
+557 verbose stack Error: not found: git
+557 verbose stack     at F (C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:63:19)
+557 verbose stack     at E (C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:72:29)
+557 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\which.js:81:16
+557 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\node_modules\isexe\index.js:44:5
+557 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\which\node_modules\isexe\windows.js:29:5
+557 verbose stack     at FSReqWrap.oncomplete (fs.js:82:15)
+558 verbose cwd C:\Users\franz\Documents\FH\WBA2\WBA2SS18\WBA2SS18GonschorCseh
+559 error Windows_NT 10.0.16299
+560 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "domquery"
+561 error node v4.4.4
+562 error npm  v2.15.1
+563 error code ENOGIT
+564 error not found: git
+565 error Failed using git.
+565 error This is most likely not a problem with npm itself.
+565 error Please check if you have git installed and in your PATH.
+566 verbose exit [ 1, true ]
+567 verbose unbuild node_modules\domquery
+568 info preuninstall domquery@3.0.0
+569 info uninstall domquery@3.0.0
+570 verbose unbuild rmStuff domquery@3.0.0 from C:\Users\franz\node_modules
+571 info postuninstall domquery@3.0.0
+572 silly gentlyRm C:\Users\franz\node_modules\domquery is being purged from base C:\Users\franz
+573 verbose gentlyRm don't care about contents; nuking C:\Users\franz\node_modules\domquery
+574 silly vacuum-fs purging C:\Users\franz\node_modules\domquery
+575 silly vacuum-fs quitting because other entries in C:\Users\franz\node_modules

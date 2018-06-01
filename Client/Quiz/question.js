@@ -6,4 +6,4 @@ function Question(text, choices, answer){
 
 Question.prototype.correctAnswer = function(choices){
     return choice == this.answer;
-}
+};

@@ -1,9 +1,24 @@
-function populate(){
-    if(quiz.isEnded()){
-        showScores();      
-    }
+var io = require('socket.io-client');
+var socket = io.connect('http://localhost:3000', {reconnect: true});
+
+// Add a connect listener
+socket.on('connect', function (socket) {
+    console.log('Connected!');
+});
+socket.emit('CH01', 'me', 'test msg');
+
+if (typeof document === 'undefined') {
+    global.document = {
+        createElement: () => null,
+    };
+}
+
+    function populate(){
+    if(quiz.isEnded){
+        showScores();
+   }
     else {
-        var element = document.getElementById("questions");
+        var element = document.getElementById("question");
         elemt.innerHTML = quiz.getQuestionIndex().text;
         
         var choices = quiz.getQuestionIndex().choices;
@@ -15,7 +30,7 @@ function populate(){
         }
         showProgress();
         
-    }
+   }
 }
 
 function guess(id, guess){
@@ -41,11 +56,22 @@ function showScores(){
     element.innerHTML = gameOverHtml;
     
 }
+function Question(text, choices, answer){
+    this.text=text;
+    this.choices=choices;
+    this.answer=answer;
+}
 
 var questions = [
-    new Question("In welchem Bundesland liegt Köln?", ["Nordrhein-Westfalen", "Schleswig-Holstein", "Bayern", "Sachsen"]),
-    new Question("Welche Farbe hat eine Aubergine?", ["lila", "grün", "gelb", "rot"])
+    new Question("Welche Farbe hat eine Aubergine?", ["lila", "grün", "gelb", "rot"]),
+    new Question("In welchem Bundesland liegt Köln?", ["Nordrhein-Westfalen", "Schleswig-Holstein", "Bayern", "Sachsen"])
 ];
+function Quiz(questions){
+    this.score = 0;
+    this.question = Question;
+    this.questionIndex = 0;
+}
 
 var quiz = new Quiz(questions);
 populate();
+
