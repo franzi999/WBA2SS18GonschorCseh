@@ -11,39 +11,42 @@ const register = require('./functions/RegisterFunc');
 module.exports = router => {
 
     //Standard GET
-    router.get('/', (req, res) => res.end('Welcome to Quiz-Lernen!'));
+    router.get('/', (req, res) => res.render('index.ejs'));
+    router.get('/quiz', (req, res) => res.render('quiz.ejs'));
+    router.get('/login', (req,res) => res.render('javascript_login.ejs'));
+    router.get('/addQuestion',(req,res) => res.render('addQuestion.ejs'));
 
     //Add a new Question to the DB POST
     var router;
-    router.post('/addQuestion', (req, res) => {
+   /* router.post('/addQuestion', (req, res) => {
 
         const frage = req.body.frage;
-        const level = req.body.level;
-        const author = req.body.author;
-        const antwort = req.body.antwort;
+    const level = req.body.level;
+    const author = req.body.author;
+    const antwort = req.body.antwort;
 
-        console.log(req.body.frage);
-        console.log(req.body.level);
-        console.log(req.body.author);
-        console.log(req.body.antwort);
+    console.log(req.body.frage);
+    console.log(req.body.level);
+    console.log(req.body.author);
+    console.log(req.body.antwort);
 
-        if (!frage || !level || !author || !antwort || !frage.trim() || !level.trim() || !author.trim()){
+    if (!frage || !level || !author || !antwort || !frage.trim() || !level.trim() || !author.trim()){
 
-            res.status(400).json({message: 'Invalid Request !'});
+        res.status(400).json({message: 'Invalid Request !'});
 
-        } else {
+    } else {
 
-            //If the parameters are not null, call the register to DB function
-            register.registerQuestion(frage, level, author, antwort)
+        //If the parameters are not null, call the register to DB function
+        register.registerQuestion(frage, level, author, antwort)
 
-                .then(result => {
-                    //res.setHeader('Location', '/questions/'+id);
-                    res.status(result.status).json({ message: result.message })
-                })
+            .then(result => {
+            //res.setHeader('Location', '/questions/'+id);
+            res.status(result.status).json({ message: result.message })
+    })
 
-                .catch(err => res.status(err.status).json({ message: err.message }));
-        }
-    });
+    .catch(err => res.status(err.status).json({ message: err.message }));
+    }
+});*/
 
 
 }

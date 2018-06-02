@@ -7,13 +7,71 @@ socket.on('connect', function (socket) {
 });
 socket.emit('CH01', 'me', 'test msg');
 
+var bodyParser = require('body-parser');
+var jsonParser = bodyParser.json();
+var http = require('http');
+var express = require('express');
+var app = express();
+var ejs = require('ejs');
+var fs = require('fs');
+app.use(bodyParser.json());
+app.use(express.static(__dirname+ '/public'));
+app.use(express.static(__dirname+ 'views'));
+
+app.get('/', function(req, res){
+    res.render('index.ejs');
+    console.log('Startseite');
+});
+
+app.get('/quiz', function(req, res){
+    res.render('quiz.ejs');
+    console.log('Quiz');
+});
+
+app.get('/login', function(req, res){
+    res.render('javascript_login.ejs');
+    console.log('Login');
+});
+
+app.get('/addQuestion', function(req,res){
+    res.render('addQuestion.ejs');
+});
+
+app.post("/addQuestion", jsonParser, function(req, res){
+
+    var newQuestion = JSON.stringify(req.body);
+    console.log(newFahrt);
+
+    var options = {
+        host: 'localhost',
+        port: '3000',
+        path: '/addQuestion',
+        method: "POST"
+    }
+
+    var externalRequest = http.request(options, function(externalResponse){
+        console.log('Frage hinzufügen');
+        externalResponse.on("data", function(chunk) {
+            console.log(chunk);
+            var response = JSON.parse(chunk);
+
+            res.json(response)
+            res.end();
+        });
+    });
+
+    externalRequest.setHeader("content-type", "application/json");
+    externalRequest.write(JSON.stringify(req.body));
+    console.log("post new Question");
+    externalRequest.end();
+});
+
 if (typeof document === 'undefined') {
     global.document = {
-        createElement: () => null,
-    };
+        createElement: () => null };
 }
 
-    function populate(){
+function populate(){
     if(quiz.isEnded){
         showScores();
    }
@@ -73,5 +131,6 @@ function Quiz(questions){
 }
 
 var quiz = new Quiz(questions);
-populate();
+//populate();
 
+console.log("Quiz startet");

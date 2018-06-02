@@ -12,6 +12,8 @@ const bodyParser = require('body-parser');
 
 //Databank
 const mongoose = require('mongoose');
+var mongodb = require('mongodb');
+var client = mongodb.prototype;
 
 //Port declaration
 const port = process.env.PORT || 3000;
@@ -22,13 +24,50 @@ var http = require('http');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', function (req, res) {
-    res.send('Hallo, World!!!');
+
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+io.on('connection', function (socket){
+    console.log('connection');
+
+    socket.on('CH01', function (from, msg) {
+        console.log('MSG', from, ' saying ', msg);
+    });
+
 });
+
+http.listen(3000, function () {
+    console.log('listening on *:3000');
+});
+
+
+/*app.get('/', function (req, res) {
+    res.send('Hallo, World!!!');
+});*/
+
+app.get('/quiz', function (req, res) {
+    res.render('quiz.ejs');
+
+})
+
+app.get('/login', function (req, res) {
+    res.render('javascript_login.ejs');
+})
+
+app.get('/addQuestion', function(req,res){
+    res.render('addQuestion.ejs');
+})
+
+app.post('/addQuestion', function(req,res){
+    res.render('addQuestion.ejs');
+})
 
 //Bind the routes
 require('./routes')(router);
 app.use('/', router);
+app.use('/quiz', router);
 
 //Set the port
 app.set('port', port);
@@ -52,19 +91,4 @@ app.use(function (req, res, next) {
     console.log('Server online');
 });*/
 
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
 
-io.on('connection', function (socket){
-    console.log('connection');
-
-    socket.on('CH01', function (from, msg) {
-        console.log('MSG', from, ' saying ', msg);
-    });
-
-});
-
-http.listen(3000, function () {
-    console.log('listening on *:3000');
-});
