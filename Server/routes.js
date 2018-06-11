@@ -15,6 +15,7 @@ module.exports = router => {
     router.get('/quiz', (req, res) => res.render('quiz.ejs'));
     router.get('/login', (req,res) => res.render('javascript_login.ejs'));
     router.get('/addQuestion',(req,res) => res.render('addQuestion.ejs'));
+    router.get('/registration',(req,res)=> res.render('registration.ejs'));
 
     //Add a new Question to the DB POST
     var router;

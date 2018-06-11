@@ -1,17 +1,19 @@
-var io = require('socket.io-client');
+/*var io = require('socket.io-client');
 var socket = io.connect('http://localhost:3000', {reconnect: true});
 
 // Add a connect listener
 socket.on('connect', function (socket) {
     console.log('Connected!');
 });
-socket.emit('CH01', 'me', 'test msg');
+socket.emit('CH01', 'me', 'test msg'); */
+
 
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var http = require('http');
 var express = require('express');
 var app = express();
+var port = 3000;
 var ejs = require('ejs');
 var fs = require('fs');
 app.use(bodyParser.json());
@@ -33,6 +35,60 @@ app.get('/login', function(req, res){
     console.log('Login');
 });
 
+app.post('/login', jsonParser, function (req, res) {
+    console.log('logged in');
+
+    var options = {
+        host: 'localhost',
+        port: '3000',
+        path: '/login',
+        method: "POST",
+    }
+    var externalRequest = http.request(options, function (externalResponse) {
+        console.log('Logged in');
+        externalResponse.on("data", function (chunk) {
+            console.log(chunk);
+            var response = JSON.parse(chunk);
+
+            res.json(response)
+            res.end();
+        });
+    });
+
+})
+
+app.get('/registration', function(req,res){
+    res.render('registration.ejs');
+});
+
+app.post("/registration", jsonParser, function(req, res) {
+
+    var newQuestion = JSON.stringify(req.body);
+    console.log(newUser);
+
+    var options = {
+        host: 'localhost',
+        port: '3000',
+        path: '/registration',
+        method: "POST"
+    }
+    var externalRequest = http.request(options, function (externalResponse) {
+        console.log('User hinzufügen');
+        externalResponse.on("data", function (chunk) {
+            console.log(chunk);
+            var response = JSON.parse(chunk);
+
+            res.json(response)
+            res.end();
+        });
+    });
+    externalRequest.setHeader("content-type", "application/json");
+    externalRequest.write(JSON.stringify(req.body));
+    console.log("post new User");
+    externalRequest.end();
+});
+
+
 app.get('/addQuestion', function(req,res){
     res.render('addQuestion.ejs');
 });
@@ -40,7 +96,7 @@ app.get('/addQuestion', function(req,res){
 app.post("/addQuestion", jsonParser, function(req, res){
 
     var newQuestion = JSON.stringify(req.body);
-    console.log(newFahrt);
+    console.log(newQuestion);
 
     var options = {
         host: 'localhost',
@@ -133,4 +189,9 @@ function Quiz(questions){
 var quiz = new Quiz(questions);
 //populate();
 
-console.log("Quiz startet");
+app.listen(app.get('port'), function () {
+    console.log('Quiz online');
+});
+
+
+
