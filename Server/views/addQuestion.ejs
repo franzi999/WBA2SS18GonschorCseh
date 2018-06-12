@@ -3,15 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Neue Frage hinzufügen</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
+
 <body>
 <div>
     <h1>Neue Frage hinzufügen</h1>
     <p>Im unteren Feld kannst du eine neue Frage dem Quiz hinzufügen.</p>
 </div>
 <div>
-    <input type="text"</input>
-    <button type='submit' id='addQuestion'>Hinzufügen</button>
+    <input type='text' id='questionInput'>
+    <input type='text' id='antwortInput'>
+    <button id='addQuestion'>Hinzufügen</button>
 </div>
+<script>
+
+    document.getElementById("addQuestion").onclick = function () {
+        postQuestion();
+    }
+
+    function postQuestion() {
+
+        var obj = {};
+
+        obj["frage"] = document.getElementById("questionInput").value;
+        obj["level"] = 15;
+        obj["author"] = "ich";
+        obj["antwort"] = document.getElementById("antwortInput").value;
+
+        obj = JSON.stringify(obj);
+
+        console.log(obj);
+
+
+
+        var settings = {
+            "async": false,
+            "crossDomain": true,
+            "url": "http://127.0.0.1:3000/addQuestion",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache"
+            },
+            "data": obj
+        }
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
+
+</script>
 </body>
 </html>

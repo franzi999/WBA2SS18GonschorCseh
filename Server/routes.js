@@ -18,20 +18,21 @@ module.exports = router => {
     router.get('/registration',(req,res)=> res.render('registration.ejs'));
 
     //Add a new Question to the DB POST
-    var router;
-   /* router.post('/addQuestion', (req, res) => {
+    router.post('/addQuestion', (req, res) => {
 
+        //Extract the data from the body
         const frage = req.body.frage;
-    const level = req.body.level;
-    const author = req.body.author;
-    const antwort = req.body.antwort;
+        const level = req.body.level;
+        const author = req.body.author;
+        const antwort = req.body.antwort;
 
     console.log(req.body.frage);
     console.log(req.body.level);
     console.log(req.body.author);
     console.log(req.body.antwort);
 
-    if (!frage || !level || !author || !antwort || !frage.trim() || !level.trim() || !author.trim()){
+    //Check if the data is valid
+    if (!frage || !level || !author || !antwort || !frage.trim() || !author.trim()){
 
         res.status(400).json({message: 'Invalid Request !'});
 
@@ -41,13 +42,10 @@ module.exports = router => {
         register.registerQuestion(frage, level, author, antwort)
 
             .then(result => {
-            //res.setHeader('Location', '/questions/'+id);
             res.status(result.status).json({ message: result.message })
     })
 
     .catch(err => res.status(err.status).json({ message: err.message }));
     }
-});*/
-
-
+});
 }

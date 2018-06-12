@@ -1,38 +1,77 @@
 /**
- * Created by franz on 23.04.2018.
+ * Created by cseh_17 on 13.05.2017.
  */
 
 'use-strict';
 
 // Declare dependencies
 const express = require('express');
-var app = express();
-const router = express.Router();
-const bodyParser = require('body-parser');
-
-//Databank
 const mongoose = require('mongoose');
-var mongodb = require('mongodb');
-var client = mongodb.prototype;
-
-//Port declaration
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const router = express.Router();
+const app = express();
 const port = process.env.PORT || 3000;
-var http = require('http');
 
-function incr(){
-        var n = 0;
-        n++;
-        return n;
-}
+app.use(express.static(__dirname + "/static"));
 
-//Declare the type of bodyParsers used
+//Use body-Parser for parsing the request body
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
+//Set the routes
+require('./routes')(router);
+
+//Use Acces-Control-Allow-Origin for browsers
+app.use(cors());
+app.use('/', router);
+
+//Set port
+app.set('port', port);
 
 
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+//Connect & check the database connection
+mongoose.connect('mongodb://localhost/quiz-db');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+    console.log('DB connected');
+});
+
+//Start Server, and listen on the defined port
+app.listen(app.get('port'), function () {
+    console.log('Server online');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+function incr(){
+    var n = 0;
+    n++;
+    return n;
+}
+*/
+// var io = require('socket.io')(http);
 
 /*io.on('connection', function (socket){
     console.log('connection');
@@ -51,11 +90,7 @@ var io = require('socket.io')(http);
 /*app.get('/', function (req, res) {
     res.send('Hallo, World!!!');
 });*/
-
-app.get('/quiz', function (req, res) {
-    res.render('quiz.ejs');
-
-})
+/*
 
 
 app.get('/login', function (req, res) {
@@ -88,45 +123,18 @@ app.post('/registration', function(req, res) {
 })
 
 
-app.get('/addQuestion', function(req,res){
-    res.render('addQuestion.ejs');
-})
+//app.get('/addQuestion', function(req,res){
+    //res.render('addQuestion.ejs');
+//})
 
-app.post('/addQuestion', function(req,res){
-    res.render('a' + 'AddQuestion.ejs');
-})
 
 app.get('/registration', function(req,res){
     res.render('registration.ejs');
 })
 
-//Bind the routes
-require('./routes')(router);
-app.use('/', router);
-app.use('/quiz', router);
-app.use('registration', router);
-app.use('login', router);
 
-//Set the port
-app.set('port', port);
+*/
 
-//Connect & check the databank connection
-mongoose.connect('mongodb://localhost/quiz-db');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
-    console.log('DB connected');
-});
 
-//Ich weiss nicht was das ist.
-app.use(function (req, res, next) {
-    res.set('X-Powered-By', 'Quiz');
-    next();
-});
-
-//Start Server, and listen on the defined port
-app.listen(app.get('port'), function () {
-    console.log('Server online');
-});
 
 
