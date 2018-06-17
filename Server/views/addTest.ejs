@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neuen Test hinzufügen</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+</head>
+
+<body>
+<div class="grid">
+    <div id="Test">
+        <h1> Test hinzufügen</h1>
+        <hr style="margin-bottom: 20px">
+        <p>Gib deinem Test einen thematischen passenden Titel.</p>
+        <div id="Testname" >
+            <label>Testname</label> <br>
+            <input type="text" name="test" class="textInput">
+            <input type="button" id="addTest" name="addTest" value="Test hinzufügen" class="btn">
+            <div id="name_error"></div>
+
+        </div>
+        <hr style="margin-top: 50px">
+<script>
+
+    document.getElementById("addTest").onclick = function () {
+        postTest();
+        goaddQuestion();
+    }
+
+    function goaddQuestion(){
+        onclick='localhost:3000/addQuestion';
+    }
+
+    function postTest() {
+
+        var obj = {};
+
+        obj["test"] = document.getElementById("addTest").value;
+        obj["level"] = 15;
+        obj["author"] = "ich";
+
+        obj = JSON.stringify(obj);
+
+        console.log(obj);
+
+
+
+        var settings = {
+            "async": false,
+            "crossDomain": true,
+            "url": "http://127.0.0.1:3000/addTest",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache"
+            },
+            "data": obj
+        }
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
+
+</script>
+</body>
+</html>

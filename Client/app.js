@@ -18,7 +18,7 @@ var ejs = require('ejs');
 var fs = require('fs');
 app.use(bodyParser.json());
 app.use(express.static(__dirname+ '/public'));
-app.use(express.static(__dirname+ 'views'));
+app.use(express.static(__dirname+ '/views'));
 
 app.get('/', function(req, res){
     res.render('index.ejs');
@@ -33,6 +33,11 @@ app.get('/quiz', function(req, res){
 app.get('/login', function(req, res){
     res.render('javascript_login.ejs');
     console.log('Login');
+});
+
+app.get('/addTest', function(req, res){
+    res.render('addTest.ejs');
+    console.log('Frage hinzugefügt');
 });
 
 app.post('/login', jsonParser, function (req, res) {
