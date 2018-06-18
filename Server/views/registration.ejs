@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Form validation with JavaScript</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 <div id="wrapper">
-    <form method="POST" action="index.ejs" onsubmit="return Validate()" name="vform" >
         <div id="username_div">
             <label>Username</label> <br>
             <input type="text" name="username" class="textInput">
@@ -14,23 +14,63 @@
         </div>
         <div id="email_div">
             <label>Email</label> <br>
-            <input type="email" name="email" class="textInput">
+            <input type="email" id="emailInput" name="email" class="textInput">
             <div id="email_error"></div>
         </div>
         <div id="password_div">
             <label>Password</label> <br>
-            <input type="password" name="password" class="textInput">
+            <input type="password" id="passInput" name="password" class="textInput">
         </div>
         <div id="pass_confirm_div">
             <label>Password confirm</label> <br>
-            <input type="password" name="password_confirm" class="textInput">
+            <input type="password" id="passInputConfirm" name="password_confirm" class="textInput">
             <div id="password_error"></div>
         </div>
         <div>
-            <input type="submit" name="register" value="Register" class="btn">
+            <input type="submit" id="registerBtn" name="register" value="Register" class="btn">
         </div>
-    </form>
 </div>
+<script>
+
+    document.getElementById("registerBtn").onclick = function () {
+        postUser();
+    }
+
+    function postUser() {
+
+        var obj = {};
+
+        obj["email"] = document.getElementById("emailInput").value;
+        var passInput = document.getElementById("passInput").value;
+        var passConfirm = document.getElementById("passInputConfirm").value;
+
+
+        if (passInput == passConfirm){
+            obj["hashed_pass"] = document.getElementById("passInput").value;
+        }
+
+        obj = JSON.stringify(obj);
+
+        console.log(obj);
+
+
+        var settings = {
+            "async": false,
+            "crossDomain": true,
+            "url": "http://127.0.0.1:3000/users",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache"
+            },
+            "data": obj
+        }
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
+
+</script>
 </body>
 </html>
-<script type="registration.js"></script>
