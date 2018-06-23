@@ -40,6 +40,10 @@ app.get('/addTest', function(req, res){
     console.log('Frage hinzugefügt');
 });
 
+app.get('choiceTest', function (req,res) {
+    res.render('choiceTest.ejs');
+});
+
 app.post('/login', jsonParser, function (req, res) {
     console.log('logged in');
 

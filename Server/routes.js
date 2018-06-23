@@ -23,6 +23,7 @@ module.exports = router => {
     router.get('/addQuestion', (req, res) => res.render('addQuestion.ejs'));
     router.get('/registration', (req, res) => res.render('registration.ejs'));
     router.get('/addTest', (req, res) => res.render('addTest.ejs'));
+    router.get('/choiceTest', (req,res) => res.render('choiceTest.ejs'));
 
 
     //Add a new Question to the DB POST

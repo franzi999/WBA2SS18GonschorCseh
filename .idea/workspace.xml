@@ -4,24 +4,11 @@
     <list default="true" id="af726ded-8f7e-400d-a00e-299ce080d45e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/views/quiz.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/views/quiz.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Server.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/acorn" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/acorn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/babylon" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/babylon" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/browserslist" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/browserslist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/cssesc" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/cssesc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/csso" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/csso" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/esparse" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/esparse" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/esvalidate" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/esvalidate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/js-yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/js-yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/jsesc" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/jsesc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/json5" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/regjsparser" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/regjsparser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/svgo" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/svgo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/uglifyjs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/uglifyjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/views/index.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/views/javascript_login.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/views/quiz.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/views/registration.ejs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/views/addQuestion.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/views/addQuestion.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/views/quiz.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/views/quiz.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,8 +25,8 @@
       <file leaf-file-name="registration.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/views/registration.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="21" column="69" lean-forward="true" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+            <state relative-caret-position="357">
+              <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -56,26 +43,8 @@
       <file leaf-file-name="addTest.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/views/addTest.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quiz.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/views/quiz.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="quiz.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/views/quiz.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <state relative-caret-position="153">
+              <caret line="9" lean-forward="true" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -83,17 +52,47 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2590">
-              <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+            <state relative-caret-position="155">
+              <caret line="44" column="3" lean-forward="true" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addQuestion.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addQuestion.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/views/addQuestion.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="-601">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterFunc.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/functions/RegisterFunc.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="choiceTest.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Server/views/choiceTest.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="119" selection-start-line="14" selection-start-column="119" selection-end-line="14" selection-end-column="119" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/views/login.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-524" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Server/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -101,26 +100,8 @@
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/views/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="135" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="135" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/views/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1394">
-              <caret line="82" column="2" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="2" />
+            <state relative-caret-position="289">
+              <caret line="17" column="14" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="17" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -161,10 +142,11 @@
         <option value="$PROJECT_DIR$/Server/Server.js" />
         <option value="$PROJECT_DIR$/Server/views/quiz.ejs" />
         <option value="$PROJECT_DIR$/Client/views/quiz.ejs" />
-        <option value="$PROJECT_DIR$/Client/app.js" />
         <option value="$PROJECT_DIR$/Server/views/addQuestion.ejs" />
-        <option value="$PROJECT_DIR$/Server/routes.js" />
         <option value="$PROJECT_DIR$/Server/views/addTest.ejs" />
+        <option value="$PROJECT_DIR$/Server/routes.js" />
+        <option value="$PROJECT_DIR$/Client/app.js" />
+        <option value="$PROJECT_DIR$/Server/views/choiceTest.ejs" />
       </list>
     </option>
   </component>
@@ -233,7 +215,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -263,12 +244,6 @@
               <item name="WBA2SS18GonschorCseh" type="462c0819:PsiDirectoryNode" />
               <item name="Client" type="462c0819:PsiDirectoryNode" />
               <item name="Registration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WBA2SS18GonschorCseh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WBA2SS18GonschorCseh" type="462c0819:PsiDirectoryNode" />
-              <item name="Client" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WBA2SS18GonschorCseh" type="b2602c69:ProjectViewProjectNode" />
@@ -304,6 +279,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -318,6 +294,9 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\franz\Documents\FH\WBA2\WBA2SS18\WBA2SS18GonschorCseh\Server\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\franz\Documents\FH\WBA2\WBA2SS18\WBA2SS18GonschorCseh\Server\views" />
     </key>
@@ -360,18 +339,18 @@
       <workItem from="1528742503123" duration="6636000" />
       <workItem from="1528746342267" duration="18648000" />
       <workItem from="1528839274160" duration="2140000" />
-      <workItem from="1529251827164" duration="3262000" />
+      <workItem from="1529251827164" duration="3491000" />
+      <workItem from="1529789605065" duration="1314000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53453000" />
+    <option name="totallyTimeSpent" value="54996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.13169643" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.13169643" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.329653" />
@@ -384,13 +363,34 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info id="npm" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3289689" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3289689" />
-      <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3289689" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info id="npm" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.13169643" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.32843137" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.3289689" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.31535947" />
+      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.329653" />
+      <window_info anchor="bottom" id="Version Control" order="1" weight="0.3289689" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3289689" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -399,20 +399,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Server/Server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/views/javascript_login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/Login/LogIn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -541,9 +527,6 @@
     <entry file="file://$PROJECT_DIR$/Server/functions/LanguageDetector.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/functions/RegisterFunc.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/bundle.js" />
     <entry file="file://$PROJECT_DIR$/Server/functions/Textanalysis.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -568,31 +551,53 @@
     <entry file="file://$PROJECT_DIR$/Server/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="2" selection-start-line="82" selection-start-column="2" selection-end-line="82" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/views/quiz.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="30" />
+        <state relative-caret-position="238">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/views/index.ejs">
+    <entry file="file://$PROJECT_DIR$/Server/views/registration.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="135" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="135" />
+        <state relative-caret-position="357">
+          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/views/addQuestion.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-601">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/views/addTest.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/functions/RegisterFunc.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-524" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -605,22 +610,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2590">
-          <caret line="34" column="25" lean-forward="true" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
+        <state relative-caret-position="155">
+          <caret line="44" column="3" lean-forward="true" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/views/registration.ejs">
+    <entry file="file://$PROJECT_DIR$/Server/views/choiceTest.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="21" column="69" lean-forward="true" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/views/addQuestion.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="238">
+          <caret line="14" column="119" selection-start-line="14" selection-start-column="119" selection-end-line="14" selection-end-column="119" />
         </state>
       </provider>
     </entry>
