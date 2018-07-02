@@ -3,7 +3,7 @@
 const question = require('../model/frage');
 const ObjectId = require('mongodb').ObjectId;
 
-exports.registerQuestion = (frage, level, author, antwort) =>
+exports.registerQuestion = (frage, thema, level, author, antwort) =>
 
     new Promise((resolve,reject) => {
 
@@ -14,6 +14,7 @@ exports.registerQuestion = (frage, level, author, antwort) =>
         const newQuestion = new question({
             id: id,
             frage: frage,
+            thema: thema,
             level: level,
             author: author,
             antwort: antwort,

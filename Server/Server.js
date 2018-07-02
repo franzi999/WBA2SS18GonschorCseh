@@ -16,6 +16,8 @@ const port = process.env.PORT || 3000;
 app.use(express.static(__dirname + "/static"));
 app.use('/static', express.static(__dirname + '/public'));
 
+app.set('view engine', 'ejs');
+
 //Use body-Parser for parsing the request body
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

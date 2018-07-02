@@ -16,6 +16,12 @@
 <div>
     <input type='text' id='questionInput'>
     <input type='text' id='antwortInput'>
+    <select id="thema">
+        <option value="Mathe">Mathe</option>
+        <option value="WBA">WBA</option>
+        <option value="CGA">CGA</option>
+        <option value="AP1">AP1</option>
+    </select>
     <button id='addQuestion'>Hinzufügen</button>
 </div>
 <script>
@@ -29,7 +35,8 @@
         var obj = {};
 
         obj["frage"] = document.getElementById("questionInput").value;
-        obj["level"] = "120";
+        obj["thema"] = document.getElementById("thema").value;
+        obj["level"] = "12";
         obj["author"] = "ich";
         obj["antwort"] = document.getElementById("antwortInput").value;
 

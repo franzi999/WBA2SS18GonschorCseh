@@ -9,10 +9,55 @@
 </head>
 <body>
 <h1>Einen neuen Test anlegen oder nach einem bestehenden Test suchen</h1>
-<p> Bitte wähle aus, ob du einen neuen Test anlegen oder nach einem bereits bestehenden Test suchen möchtest. </p>
 <div id="choiceTest"></div>
+<select id="thema">
+    <option value="Mathe">Mathe</option>
+    <option value="WBA">WBA</option>
+    <option value="CGA">CGA</option>
+    <option value="AP1">AP1</option>
+</select>
 <div class="button">
-    <INPUT type="button" value="Test anlegen" id="choicesTest1" onClick="parent.location='http://localhost:3000/addTest'"></FORM>
-    <INPUT type="button" value="Test suchen" id="choicesTest2" onClick="parent.location='http://localhost:3000/'"></FORM>
+    <input type="submit" value="Test starten" id="choicesTest1" class="btn">
 </div>
+<script>
+
+    document.getElementById("choicesTest1").onclick = function () {
+        startTest();
+    }
+
+    function startTest() {
+
+        var obj = {};
+        obj["thema"] = document.getElementById("thema").value;
+        obj = JSON.stringify(obj);
+
+        console.log(obj);
+
+        var settings = {
+            "async": false,
+            "crossDomain": true,
+            "url": "http://127.0.0.1:3000/getQuestions",
+            "method": "POST",
+            "Content-Type": "application/json",
+            "headers": {
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache"
+            },
+            "data": obj
+        }
+
+        $.ajax(settings).done(function (result) {
+            console.log("I am done with this shit")
+            console.log(result);
+        })
+            .fail(function(xhr, textStatus, error) {
+                console.log("Fail");
+                console.log(xhr.statusText);
+                console.log(textStatus);
+                console.log(error);
+            });
+    }
+
+</script>
+
 </body>

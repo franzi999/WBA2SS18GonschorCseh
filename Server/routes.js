@@ -9,6 +9,7 @@ const register = require('./functions/RegisterFunc');
 const login = require('./functions/LoginFunc');
 const config = require('./config/tsconfig');
 const registerUser = require('./functions/RegisterUserFunc');
+const question = require('./functions/Questions');
 
 const auth = require('basic-auth');
 const jwt = require('jsonwebtoken');
@@ -31,54 +32,26 @@ module.exports = router => {
 
         //Extract the data from the body
         const frage = req.body.frage;
+        const thema = req.body.thema;
         const level = req.body.level;
         const author = req.body.author;
         const antwort = req.body.antwort;
 
         console.log(req.body.frage);
+        console.log(req.body.thema);
         console.log(req.body.level);
         console.log(req.body.author);
         console.log(req.body.antwort);
 
         //Check if the data is valid
-        if (!frage || !level || !author || !antwort || !frage.trim() || !author.trim()) {
+        if (!frage || !thema || !level || !author || !antwort || !frage.trim() || !author.trim()) {
 
             res.status(400).json({message: 'Invalid Request !'});
 
         } else {
 
             //If the parameters are not null, call the register to DB function
-            register.registerQuestion(frage, level, author, antwort)
-
-                .then(result => {
-                    res.status(result.status).json({message: result.message})
-                })
-
-                .catch(err => res.status(err.status).json({message: err.message}));
-        }
-    });
-
-//Add a new Test to the DB POST
-    router.post('/addTest', (req, res) => {
-
-        //Extract the data from the body
-        const test = req.body.test;
-        const level = req.body.level;
-        const author = req.body.author;
-
-        console.log(req.body.test);
-        console.log(req.body.level);
-        console.log(req.body.author);
-
-        //Check if the data is valid
-        if (!test || !level || !author || !test.trim() || !author.trim()) {
-
-            res.status(400).json({message: 'Invalid Request !'});
-
-        } else {
-
-            //If the parameters are not null, call the register to DB function
-            register.registerQuestion(test, level, author)
+            register.registerQuestion(frage, thema, level, author, antwort)
 
                 .then(result => {
                     res.status(result.status).json({message: result.message})
@@ -116,6 +89,7 @@ module.exports = router => {
         }
     });
 
+    //Authenticate a user
     router.get('/auth', (req, res) => {
 
         const credentials = auth(req);
@@ -134,11 +108,24 @@ module.exports = router => {
 
                     const token = jwt.sign(result, config.secret, { expiresIn: 1440 });
 
-                    res.status(result.status).json({ message: result.message, token: token });
+                    res.status(result.status).json({ status: result.status, message: result.message, token: token });
 
                 })
 
                 .catch(err => res.status(err.status).json({ message: err.message }));
         }
     });
+
+    //Get questions in order to start a test
+    router.post('/getQuestions', (req,  res) => {
+
+        console.log(req.body.thema);
+        question.getQuestions(req.body.thema)
+
+            .then(result => res.json(result))
+
+            .catch(err => res.status(err.status >= 100 && err.status < 600 ? err.status : 500).json({ message: err.message }));
+
+    });
+
 };

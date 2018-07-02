@@ -31,9 +31,6 @@
 
     function login() {
 
-        var obj = {};
-
-        console.log(obj);
 
         var settings = {
             "async": false,
@@ -47,9 +44,20 @@
             }
         }
 
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
+        $.ajax(settings).done(function (result) {
+            console.log("logged in");
+            console.log(result.status);
+
+            if (result.status === 200){
+                parent.location='http://localhost:3000/choiceTest'
+            }
+        })
+            .fail(function(xhr, textStatus, error) {
+                console.log("Fail");
+                console.log(xhr.statusText);
+                console.log(textStatus);
+                console.log(error);
+            });
     }
 
 
