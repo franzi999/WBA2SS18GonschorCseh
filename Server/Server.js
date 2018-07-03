@@ -10,11 +10,13 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const router = express.Router();
+
+
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + "/static"));
-app.use('/static', express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 
