@@ -35,14 +35,19 @@ app.get('/login', function(req, res){
     console.log('Login');
 });
 
-app.get('/addTest', function(req, res){
-    res.render('addTest.ejs');
+app.get('/test', function(req, res){
+    res.render('test.ejs');
     console.log('Frage hinzugefügt');
 });
 
-app.get('choiceTest', function (req,res) {
+app.get('/choiceTest', function (req,res) {
     res.render('choiceTest.ejs');
 });
+
+app.get('/addQuestion1', function(req,res){
+    res.render('addQuestion1.ejs');
+})
+
 
 app.post('/login', jsonParser, function (req, res) {
     console.log('logged in');
@@ -102,7 +107,7 @@ app.get('/addQuestion', function(req,res){
     res.render('addQuestion.ejs');
 });
 
-app.post("/addQuestion", jsonParser, function(req, res){
+app.post("/addQuestion1", jsonParser, function(req, res){
 
     var newQuestion = JSON.stringify(req.body);
     console.log(newQuestion);
@@ -110,7 +115,41 @@ app.post("/addQuestion", jsonParser, function(req, res){
     var options = {
         host: 'localhost',
         port: '3000',
-        path: '/addQuestion',
+        path: '/addQuestion1',
+        method: "POST"
+    }
+
+    var externalRequest = http.request(options, function(externalResponse){
+        console.log('Frage hinzufügen');
+        externalResponse.on("data", function(chunk) {
+            console.log(chunk);
+            var response = JSON.parse(chunk);
+
+            res.json(response)
+            res.end();
+        });
+    });
+
+    externalRequest.setHeader("content-type", "application/json");
+    externalRequest.write(JSON.stringify(req.body));
+    console.log("post new Question");
+    externalRequest.end();
+});
+
+if (typeof document === 'undefined') {
+    global.document = {
+        createElement: () => null };
+}
+
+app.post("/addQuestion2", jsonParser, function(req, res){
+
+    var newQuestion = JSON.stringify(req.body);
+    console.log(newQuestion);
+
+    var options = {
+        host: 'localhost',
+        port: '3000',
+        path: '/addQuestion2',
         method: "POST"
     }
 

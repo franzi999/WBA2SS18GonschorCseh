@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Neuen Test hinzufügen</title>
+    <title>Test suchen</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
 
@@ -10,22 +10,34 @@
 
 <body>
 <div class="grid">
-    <div id="Test">
-        <h1> Test hinzufügen</h1>
+    <div id="test">
+        <h1> Test suchen</h1>
         <hr style="margin-bottom: 20px">
-        <p>Gib deinem Test einen thematischen passenden Titel.</p>
-        <div id="Testname" >
-            <label>Testname</label> <br>
-            <input type="text" name="test" class="textInput">
-            <input type="button" id="addTest" name="addTest" value="Test hinzufügen" class="btn">
+        <p>Um einen passenden Test zu finden, wähle eine Kategorie aus.
+        <div id="Testkategorie" >
+            <select id="thema">
+                <option value="Mathe">Mathe</option>
+                <option value="WBA">WBA</option>
+                <option value="CGA">CGA</option>
+                <option value="AP1">AP1</option>
+            </select>
+            <div id="Fragentyp1">
+                <label>nur meine Fragen</label>
+            <input type="checkbox" id="eigeneFragen" name="eigeneFragen"
+                   value="nur eigene Fragen"/></div>
+            <div id="Fragentyp2">
+                <label>alle Fragen</label>
+            <input type="checkbox" id="alleFragen" name="alleFragen"
+                   value="alle Fragen"></div>
+            <button id="thema" type="button" value="Test suchen">Test suchen</button>
             <div id="name_error"></div>
 
         </div>
         <hr style="margin-top: 50px">
 <script>
 
-    document.getElementById("addTest").onclick = function () {
-        postTest();
+    document.getElementById("thema").onclick = function () {
+       // postTest();
         goaddQuestion();
     }
 
@@ -33,7 +45,7 @@
         onclick='localhost:3000/addQuestion';
     }
 
-    function postTest() {
+   /* function postTest() {
 
         var obj = {};
 
@@ -62,7 +74,7 @@
         $.ajax(settings).done(function (response) {
             console.log(response);
         });
-    }
+    }*/
 
 </script>
 </body>

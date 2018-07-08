@@ -23,12 +23,14 @@ module.exports = router => {
     router.get('/login', (req, res) => res.render('login.ejs'));
     router.get('/addQuestion', (req, res) => res.render('addQuestion.ejs'));
     router.get('/registration', (req, res) => res.render('registration.ejs'));
-    router.get('/addTest', (req, res) => res.render('addTest.ejs'));
+    router.get('/test', (req, res) => res.render('test.ejs'));
     router.get('/choiceTest', (req,res) => res.render('choiceTest.ejs'));
+    router.get('/addQuestion1', (req, res)=> res.render('addQuestion1.ejs'));
+    router.get('/addQuestion2', (req, res) => res.render('addQuestion2.ejs'));
 
 
     //Add a new Question to the DB POST
-    router.post('/addQuestion', (req, res) => {
+    router.post('/addQuestion1', (req, res) => {
 
         //Extract the data from the body
         const frage = req.body.frage;
@@ -52,6 +54,45 @@ module.exports = router => {
 
             //If the parameters are not null, call the register to DB function
             register.registerQuestion(frage, thema, level, author, antwort)
+
+                .then(result => {
+                    res.status(result.status).json({message: result.message})
+                })
+
+                .catch(err => res.status(err.status).json({message: err.message}));
+        }
+    });
+
+    router.post('/addQuestion2', (req, res) => {
+
+        //Extract the data from the body
+        const frage = req.body.frage;
+        const thema = req.body.thema;
+        const level = req.body.level;
+        const author = req.body.author;
+        const antwortA = req.body.antwortA;
+        const antwortB = req.body.antwortB;
+        const antwortC = req.body.antwortC;
+        const antwortD = req.body.antwortD;
+
+        console.log(req.body.frage);
+        console.log(req.body.thema);
+        console.log(req.body.level);
+        console.log(req.body.author);
+        console.log(req.body.antwortA);
+        console.log(req.body.antwortB);
+        console.log(req.body.antwortC);
+        console.log(req.body.antwortD);
+
+        //Check if the data is valid
+        if (!frage || !thema || !level || !author || !antwortA || !antwortB || !antwortC || !antwortD || !frage.trim() || !author.trim()) {
+
+            res.status(400).json({message: 'Invalid Request !'});
+
+        } else {
+
+            //If the parameters are not null, call the register to DB function
+            register.registerQuestion(frage, thema, level, author, antwortA, antwortB, antwortC, antwortD)
 
                 .then(result => {
                     res.status(result.status).json({message: result.message})

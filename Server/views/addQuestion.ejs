@@ -11,58 +11,15 @@
 <body>
 <div>
     <h1>Neue Frage hinzufügen</h1>
-    <p>Im unteren Feld kannst du eine neue Frage dem Quiz hinzufügen.</p>
+    <p>Welche Art von Frage möchten Sie dem Quiz hinzufügen?</p>
 </div>
+<div id="TextFrage">
+    <label>Frage mit Textantwort</label>
+    <input type="checkbox" id="textantwort" name="textantwort"
+           value="textantwort" onclick="parent.location ='http://localhost:3000/addQuestion1'"/></div>
+
+<div id="Multiplechoice">
+    <label>Multiplechoice-Frage</label>
+    <input type="checkbox" id="multiplechoice" name="multiplechoice"
+           value="multiplechoice" onclick="parent.location='http://localhost:3000/addQuestion2'"></div>
 <div>
-    <input type='text' id='questionInput'>
-    <input type='text' id='antwortInput'>
-    <select id="thema">
-        <option value="Mathe">Mathe</option>
-        <option value="WBA">WBA</option>
-        <option value="CGA">CGA</option>
-        <option value="AP1">AP1</option>
-    </select>
-    <button id='addQuestion'>Hinzufügen</button>
-</div>
-<script>
-
-    document.getElementById("addQuestion").onclick = function () {
-        postQuestion();
-    }
-
-    function postQuestion() {
-
-        var obj = {};
-
-        obj["frage"] = document.getElementById("questionInput").value;
-        obj["thema"] = document.getElementById("thema").value;
-        obj["level"] = "12";
-        obj["author"] = "ich";
-        obj["antwort"] = document.getElementById("antwortInput").value;
-
-        obj = JSON.stringify(obj);
-
-        console.log(obj);
-
-
-
-        var settings = {
-            "async": false,
-            "crossDomain": true,
-            "url": "http://127.0.0.1:3000/addQuestion",
-            "method": "POST",
-            "headers": {
-                "Content-Type": "application/json",
-                "Cache-Control": "no-cache"
-            },
-            "data": obj
-        }
-
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
-    }
-
-</script>
-</body>
-</html>
