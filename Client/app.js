@@ -8,24 +8,44 @@ socket.on('connect', function (socket) {
 socket.emit('CH01', 'me', 'test msg'); */
 
 
-var bodyParser = require('body-parser');
-var jsonParser = bodyParser.json();
-var http = require('http');
+
 var express = require('express');
-var app = express();
-var port = 3000;
-var ejs = require('ejs');
 var fs = require('fs');
+var bodyParser = require('body-parser');
+var ejs = require('ejs');
+var http = require('http');
+const cors = require('cors');
+var app = express();
+var server = http.createServer(app);
+var port = 3000;
+
+const router = express.Router();
+
+
+
 app.use(bodyParser.json());
 app.use(express.static(__dirname+ '/public'));
 app.use(express.static(__dirname+ '/views'));
+
+
+
+require('./routes')(router);
+
+//Use Acces-Control-Allow-Origin for browsers
+app.use(cors());
+app.use('/', router);
+
+
 
 app.get('/', function(req, res){
     res.render('index.ejs');
     console.log('Startseite');
 });
 
-app.get('/quiz', function(req, res){
+
+
+
+/*app.get('/quiz', function(req, res){
     res.render('quiz.ejs');
     console.log('Quiz');
 });
@@ -197,9 +217,11 @@ function Quiz(questions){
 
 var quiz = new Quiz(questions);
 //populate();
+*/
 
-app.listen(app.get('port'), function () {
-    console.log('Quiz online');
+
+app.listen(3001, function () {
+    console.log('Quiz online auf Port 3001');
 });
 
 

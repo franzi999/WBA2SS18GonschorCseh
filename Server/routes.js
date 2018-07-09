@@ -68,7 +68,6 @@ module.exports = router => {
         const email = req.body.email;
         const password = req.body.hashed_pass;
 
-
         console.log(email);
 
         if (!email || !password || !email.trim() || !password.trim()){
@@ -81,13 +80,38 @@ module.exports = router => {
 
                 .then(result => {
 
-                    res.setHeader('Location', '/users/'+email);
+                    //res.status(result.status).json(req.body);
+                    //res.setHeader('Location', '/users/'+email);
                     res.status(result.status).json({ message: result.message })
                 })
 
                 .catch(err => res.status(err.status).json({ message: err.message }));
         }
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Authenticate a user
     router.get('/auth', (req, res) => {
