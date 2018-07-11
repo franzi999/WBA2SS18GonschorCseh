@@ -9,22 +9,23 @@
 </head>
 <body>
 <h1>Multiplechoice-Frage anlegen</h1>
+<p>Setze hinter die richtige Antwortmöglichkeit ein Häkchen in den Checkbox. </p>
 <div>
     <label>Frage</label>
     <input type='text' id='questionInput'>
 </div>
 <div>
         <label>Antwort A</label>
-        <input type='text' id='antwortInputA'>
+        <input type='text' id='antwortInputA'> <input type="checkbox" id="true1" onclick="trueAnswer()">
 </div>
 <div><label>Antwort B</label>
-    <input type='text' id='antwortInputB'></div>
+    <input type='text' id='antwortInputB'><input type="checkbox" id="true2" onclick="trueAnswer()"> </div>
 
 <div><label>Antwort C</label>
-<input type='text' id='antwortInputC'></div>
+<input type='text' id='antwortInputC'> <input type="checkbox" id="true3" onclick="trueAnswer()"></div>
 
 <div><label>Antwort D</label>
-    <input type='text' id='antwortInputD'></div>
+    <input type='text' id='antwortInputD'> <input type="checkbox" id="true4" onclick="trueAnswer()"></div>
 
     <select id="thema">
         <option value="Mathe">Mathe</option>
@@ -35,6 +36,20 @@
     <button id='addQuestion'>Hinzufügen</button>
 
 <script>
+
+    function trueAnswer(){
+
+        var checkbox = document.getElementById("true1", "true2", "true3", "true4");
+        if(checkbox.checked && document.getElementById("antwortInputA")){
+            Boolean.prototype.antwortA = true;}
+            else if(checkbox.checked && document.getElementById("antwortInputB")){
+            Boolean.prototype.antwortB = true;}
+            else if(checkbox.checked && document.getElementById("antwortInputC")){
+            Boolean.prototype.antwortC =true;}
+            else if(checkbox.checked && document.getElementById("antwortInputD")){
+            Boolean.prototype.antwortD = true;
+            }
+    }
 
     document.getElementById("addQuestion").onclick = function () {
         postQuestion();
@@ -52,6 +67,7 @@
         obj["antwortB"] = document.getElementById("antwortInputB").value;
         obj["antwortC"] = document.getElementById("antwortInputC").value;
         obj["antwortD"] = document.getElementById("antwortInputD").value;
+        obj["boolean"] = document.getElementById("true1","true2","true3","true4").value;
 
         obj = JSON.stringify(obj);
 
