@@ -138,7 +138,7 @@ module.exports = router => {
         }
     });
 
-    router.post('/home/addQuestion', (req, res) => {
+    router.post('/home/addMcQuestion', (req, res) => {
 
         console.log("Route addMcQuestion wurde aufgerufen");
 
