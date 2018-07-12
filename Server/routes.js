@@ -5,62 +5,19 @@
 'use-strict';
 
 //Import functions
-const register = require('./functions/RegisterFunc');
-const login = require('./functions/LoginFunc');
-const config = require('./config/tsconfig');
 const registerUser = require('./functions/RegisterUserFunc');
-const question = require('./functions/Questions');
+const login = require('./functions/LoginFunc');
+const registerQuestion = require('./functions/RegisterQuestionFunc');
+const registerMcQuestion = require('./functions/RegisterMcFunc')
+//const question = require('./functions/Questions');
+
+const config = require('./config/tsconfig');
 
 const auth = require('basic-auth');
 const jwt = require('jsonwebtoken');
 
 //Define and implement the routes
 module.exports = router => {
-
-    //Standard GET
-    router.get('/', (req, res) => res.render('index.ejs'));
-    router.get('/quiz', (req, res) => res.render('quiz.ejs'));
-    router.get('/login', (req, res) => res.render('login.ejs'));
-    router.get('/addQuestion', (req, res) => res.render('addQuestion.ejs'));
-    router.get('/registration', (req, res) => res.render('registration.ejs'));
-    router.get('/addTest', (req, res) => res.render('addTest.ejs'));
-    router.get('/choiceTest', (req,res) => res.render('choiceTest.ejs'));
-
-
-    //Add a new Question to the DB POST
-    router.post('/addQuestion', (req, res) => {
-
-        //Extract the data from the body
-        const frage = req.body.frage;
-        const thema = req.body.thema;
-        const level = req.body.level;
-        const author = req.body.author;
-        const antwort = req.body.antwort;
-
-        console.log(req.body.frage);
-        console.log(req.body.thema);
-        console.log(req.body.level);
-        console.log(req.body.author);
-        console.log(req.body.antwort);
-
-        //Check if the data is valid
-        if (!frage || !thema || !level || !author || !antwort || !frage.trim() || !author.trim()) {
-
-            res.status(400).json({message: 'Invalid Request !'});
-
-        } else {
-
-            //If the parameters are not null, call the register to DB function
-            register.registerQuestion(frage, thema, level, author, antwort)
-
-                .then(result => {
-                    res.status(result.status).json({message: result.message})
-                })
-
-                .catch(err => res.status(err.status).json({message: err.message}));
-        }
-    });
-
 
     //Register a new user. Post function to add a user to the DB
     router.post('/users', (req, res) => {
@@ -71,47 +28,17 @@ module.exports = router => {
         console.log(email);
 
         if (!email || !password || !email.trim() || !password.trim()){
-
-            res.status(400).json({message: 'Invalid Request !'});
-
+            res.status(400).json({message: 'Invalid Request!'});
         } else {
-
             registerUser.registerUser(email, password)
-
                 .then(result => {
-
                     //res.status(result.status).json(req.body);
                     //res.setHeader('Location', '/users/'+email);
                     res.status(result.status).json({ message: result.message })
                 })
-
                 .catch(err => res.status(err.status).json({ message: err.message }));
         }
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //Authenticate a user
     router.get('/auth', (req, res) => {
@@ -121,24 +48,104 @@ module.exports = router => {
         console.log(credentials);
 
         if (!credentials) {
-
-            res.status(400).json({ message: 'Invalid Request !' });
-
+            res.status(400).json({ message: 'Invalid Request!' });
         } else {
-
             login.loginUser(credentials.name, credentials.pass)
-
                 .then(result => {
-
                     const token = jwt.sign(result, config.secret, { expiresIn: 1440 });
-
                     res.status(result.status).json({ status: result.status, message: result.message, token: token });
-
                 })
-
                 .catch(err => res.status(err.status).json({ message: err.message }));
         }
     });
+
+    //Add a new Question to the DB POST
+    router.post('/questions', (req, res) => {
+
+        //Extract the data from the body
+        const frage = req.body.frage;
+        const thema = req.body.thema;
+        const level = req.body.level;
+        const author = req.body.author;
+        const antwort = req.body.antwort;
+
+        //Check if the data is valid
+        if (!frage || !thema || !level || !author || !antwort || !frage.trim() || !author.trim()) {
+            res.status(400).json({message: 'Invalid Request!'});
+        } else {
+
+            //If the parameters are not null, call the register to DB function
+            registerQuestion.registerQuestion(frage, thema, level, author, antwort)
+                .then(result => {
+                    res.status(result.status).json({message: result.message})
+                })
+                .catch(err => res.status(err.status).json({message: err.message}));
+        }
+    });
+
+    //Add a new Multiple Choice Question to the DB POST
+    router.post('/mcquestions', (req, res) => {
+
+        //Extract the data from the body
+        const mcFrage = req.body.mcFrage;
+        const mcThema = req.body.mcThema;
+        const mcLevel = req.body.mcLevel;
+        const mcAuthor = req.body.mcAuthor;
+        const mcAntwortA = req.body.mcAntwortA;
+        const mcAntwortB = req.body.mcAntwortB;
+        const mcAntwortC = req.body.mcAntwortC;
+        const mcAntwortD = req.body.mcAntwortD;
+        const mcIstRichtigA = req.body.mcIstRichtigA;
+        const mcIstRichtigB = req.body.mcIstRichtigB;
+        const mcIstRichtigC = req.body.mcIstRichtigC;
+        const mcIstRichtigD = req.body.mcIstRichtigD;
+
+        //Check if the data is valid
+        if (!mcFrage || !mcThema || !mcLevel || !mcAuthor || !mcAntwortA || !mcAntwortB || !mcAntwortC || !mcAntwortD|| !mcFrage.trim() || !mcAuthor.trim()) {
+            res.status(400).json({message: 'Invalid Request!'});
+        } else {
+
+            //If the parameters are not null, call the register to DB function
+            registerMcQuestion.registerQuestion(mcFrage, mcThema, mcLevel, mcAuthor, mcAntwortA, mcAntwortB,mcAntwortC, mcAntwortD, mcIstRichtigA, mcIstRichtigB, mcIstRichtigC, mcIstRichtigD)
+                .then(result => {
+                    res.status(result.status).json({message: result.message})
+                })
+                .catch(err => res.status(err.status).json({message: err.message}));
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Get questions in order to start a test
     router.post('/getQuestions', (req,  res) => {

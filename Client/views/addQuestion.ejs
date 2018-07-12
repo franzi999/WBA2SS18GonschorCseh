@@ -32,28 +32,27 @@
 
     function postQuestion() {
 
-        var obj = {};
+        let obj = {};
 
         obj["frage"] = document.getElementById("questionInput").value;
         obj["thema"] = document.getElementById("thema").value;
         obj["level"] = "12";
-        obj["author"] = "ich";
+        obj["author"] = "du";
         obj["antwort"] = document.getElementById("antwortInput").value;
 
         obj = JSON.stringify(obj);
 
         console.log(obj);
 
-
-
-        var settings = {
+        const settings = {
             "async": false,
             "crossDomain": true,
-            "url": "http://127.0.0.1:3000/addQuestion",
+            "url": "http://127.0.0.1:3001/home/addQuestion",
             "method": "POST",
             "headers": {
                 "Content-Type": "application/json",
-                "Cache-Control": "no-cache"
+                "Cache-Control": "no-cache",
+                "x-access-token": localStorage.getItem('token')
             },
             "data": obj
         }

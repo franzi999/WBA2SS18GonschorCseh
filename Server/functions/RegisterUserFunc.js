@@ -14,25 +14,20 @@ exports.registerUser = (email, password) =>
         const hash = bcrypt.hashSync(password, salt);
 
         const newUser = new user({
-
             email: email,
             hashed_pass: hash
         });
 
         newUser.save()
-
-            .then(() => resolve({ status: 201, message: 'User Registered Sucessfully !' }))
+            .then(() => resolve({ status: 201, message: 'User Registered Successfully!' }))
 
             .catch(err => {
 
                 //Check if the user already exists
                 if (err.code === 11000) {
-
-                    reject({ status: 409, message: 'User Already Registered !' });
-
+                    reject({ status: 409, message: 'User Already Registered!' });
                 } else {
-
-                    reject({ status: 500, message: 'Internal Server Error !' });
+                    reject({ status: 500, message: 'Internal Server Error!' });
                 }
             });
     });

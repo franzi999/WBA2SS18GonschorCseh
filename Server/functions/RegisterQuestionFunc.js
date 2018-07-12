@@ -8,8 +8,7 @@ exports.registerQuestion = (frage, thema, level, author, antwort) =>
     new Promise((resolve,reject) => {
 
         //Create unique generated id
-        var id = new ObjectId().toHexString();
-
+        const id = new ObjectId().toHexString();
 
         const newQuestion = new question({
             id: id,
@@ -21,18 +20,12 @@ exports.registerQuestion = (frage, thema, level, author, antwort) =>
         });
 
         newQuestion.save()
-
-            .then(() => resolve({ status: 201, message: 'Question Registered Sucessfully !' }))
-
+            .then(() => resolve({ status: 201, message: 'Question Registered Successfully !' }))
             .catch(err => {
-
-                if (err.code == 11000) {
-
+                if (err.code === 11000) {
                     reject({ status: 409, message: 'Question Already Registered!'});
-
                 } else {
-
-                    reject({ status: 500, message: 'Internal Server Error !' });
+                    reject({ status: 500, message: 'Internal Server Error!' });
                 }
             });
     });
