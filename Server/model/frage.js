@@ -2,7 +2,6 @@
 
 //Declarare dependencies
 const mongoose = require('mongoose');
-const ObjectId = require('mongodb').ObjectId;
 
 //Create Question schema in DB
 const frageSchema = mongoose.Schema({
@@ -20,7 +19,7 @@ const frageSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    level              : Number,
+    level              : String,
     author             : String,
     antwort            : {
         type:String,
@@ -28,6 +27,6 @@ const frageSchema = mongoose.Schema({
     },
 });
 
-mongoose.Promise = global.Promise
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/quiz-db');
 module.exports = mongoose.model('frage', frageSchema);

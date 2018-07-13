@@ -38,26 +38,21 @@
 
     function postUser() {
 
-        var obj = {};
-
+        let obj = {};
         obj["email"] = document.getElementById("emailInput").value;
-        var passInput = document.getElementById("passInput").value;
-        var passConfirm = document.getElementById("passInputConfirm").value;
+        let passInput = document.getElementById("passInput").value;
+        let passConfirm = document.getElementById("passInputConfirm").value;
 
-
-        if (passInput == passConfirm){
+        if (passInput === passConfirm){
             obj["hashed_pass"] = document.getElementById("passInput").value;
         }
 
         obj = JSON.stringify(obj);
 
-        console.log(obj);
-
-
-        var settings = {
+        const settings = {
             "async": false,
             "crossDomain": true,
-            "url": "http://127.0.0.1:3000/users",
+            "url": "http://127.0.0.1:3001/registration",
             "method": "POST",
             "headers": {
                 "Content-Type": "application/json",
@@ -66,9 +61,7 @@
             "data": obj
         }
 
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
+        $.ajax(settings).done(function (response) {});
     }
 
 </script>
