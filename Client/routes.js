@@ -42,11 +42,20 @@ module.exports = router => {
         } else {
             res.status(401).json({ message: 'Invalid Token!' });
         }});
+    router.get('/quiz/:token', function(req, res){
+
+        let token = req.params.token;
+        if (checkToken(token)) {
+
+            // Franzi, hier bitte ein ejs für MC Fragen
+            res.render('quiz.ejs');
+        } else {
+            res.status(401).json({ message: 'Invalid Token!' });
+        }});
 
 
 
     //router.get('/quiz', (req, res) => res.render('quiz.ejs'));
-    //router.get('/addTest', (req, res) => res.render('addTest.ejs'));
     // router.get('/choiceTest', (req,res) => res.render('choiceTest.ejs'));
 
 
@@ -170,6 +179,126 @@ module.exports = router => {
         }
     });
 
+    router.post('/quiz/getQuestions', (req, res) => {
+
+        console.log("Route getQuestion wurde aufgerufen");
+
+        let questions = {};
+
+        if (checkToken(req.headers['x-access-token'])) {
+
+            if (req.body.level === 'easy'){
+
+                const optionsE = {
+                    url: 'http://localhost:3000/getquestionseasy',
+                    method: 'POST',
+                    json: req.body
+                };
+
+                request.post(optionsE, function (err, httpResponse, body) {
+                    if (err) {
+                        console.error(err);
+                        console.log(err.message);
+                        res.send(err.statusCode);
+                    } else {
+                        console.log(httpResponse.statusCode);
+                        questions = {"easyQuestions": body};
+                    }
+                });
+
+                const optionsM = {
+                    url: 'http://localhost:3000/getquestionsmoderate',
+                    method: 'POST',
+                    json: req.body
+                };
+
+                request.post(optionsM, function (err, httpResponse, body) {
+                    if (err) {
+                        console.error(err);
+                        res.send(err.statusCode);
+                    } else {
+                        console.log(httpResponse.statusCode);
+                        questions = {"moderateQuestions": body};
+                    }
+                });
+
+                const optionsH = {
+                    url: 'http://localhost:3000/getquestionshard',
+                    method: 'POST',
+                    json: req.body
+                };
+
+                request.post(optionsH, function (err, httpResponse, body) {
+                    if (err) {
+                        console.error(err);
+                        res.send(err.statusCode);
+                    } else {
+                        console.log(httpResponse.statusCode);
+                        questions = {"hardQuestions": body};
+                    }
+                });
+
+            }
+
+            if (req.body.level === 'moderate'){
+
+                const optionsM = {
+                    url: 'http://localhost:3000/getquestionsmoderate',
+                    method: 'POST',
+                    json: req.body
+                };
+
+                request.post(optionsM, function (err, httpResponse, body) {
+                    if (err) {
+                        console.error(err);
+                        res.send(err.statusCode);
+                    } else {
+                        console.log(httpResponse.statusCode);
+                        questions = {"moderateQuestions": body};
+                    }
+                });
+
+                const optionsH = {
+                    url: 'http://localhost:3000/getquestionshard',
+                    method: 'POST',
+                    json: req.body
+                };
+
+                request.post(optionsH, function (err, httpResponse, body) {
+                    if (err) {
+                        console.error(err);
+                        res.send(err.statusCode);
+                    } else {
+                        console.log(httpResponse.statusCode);
+                        questions = {"hardQuestions": body};
+                    }
+                });
+            }
+
+            if (req.body.level === 'hard'){
+
+                const optionsH = {
+                    url: 'http://localhost:3000/getquestionshard',
+                    method: 'POST',
+                    json: req.body
+                };
+
+                request.post(optionsH, function (err, httpResponse, body) {
+                    if (err) {
+                        console.error(err);
+                        res.send(err.statusCode);
+                    } else {
+                        console.log(httpResponse.statusCode);
+                        questions = {"hardQuestions": body};
+                    }
+                });
+            }
+            res.status(200).json(questions);
+        }
+    });
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -193,7 +322,6 @@ module.exports = router => {
         if (token) {
             try {
                 let decoded = jwt.verify(token, config.secret);
-                console.log(decoded);
                 return decoded.status === 200;
             } catch(err) {
                 return false;
@@ -201,6 +329,16 @@ module.exports = router => {
         } else {
             return false;
         }
+    }
+
+    function shuffleArray(array){
+
+        for (let i = array.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+
+        return array;
     }
 
 };

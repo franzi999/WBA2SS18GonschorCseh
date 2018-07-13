@@ -14,7 +14,7 @@
         <div class="button">
             <INPUT type="button" value="Frage" id="addQuestion">
             <INPUT type="button" value="Multiple Choice Frage" id="addMcQuestion">
-            <INPUT type="button" value="Test" id="startTest" onClick="parent.location='http://localhost:3001/'">
+            <INPUT type="button" value="Test" id="startTest">
         </div>
         <hr style="margin-top: 50px">
     </div>
@@ -40,6 +40,13 @@
 
         const token = localStorage.getItem('token');
         const url = 'http://localhost:3001/home/addMcQuestion/' + token;
+        window.location.replace(url);
+    }
+
+    document.getElementById("startTest").onclick = function () {
+
+        const token = localStorage.getItem('token');
+        const url = 'http://localhost:3001/quiz/' + token;
         window.location.replace(url);
     }
 

@@ -19,7 +19,7 @@ const frageSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    level              : Number,
+    level              : String,
     author             : String,
     antwort            : {
         type:String,

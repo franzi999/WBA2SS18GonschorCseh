@@ -8,8 +8,8 @@
 const registerUser = require('./functions/RegisterUserFunc');
 const login = require('./functions/LoginFunc');
 const registerQuestion = require('./functions/RegisterQuestionFunc');
-const registerMcQuestion = require('./functions/RegisterMcFunc')
-//const question = require('./functions/Questions');
+const registerMcQuestion = require('./functions/RegisterMcFunc');
+const getQuestion = require('./functions/GetQuestion');
 
 const config = require('./config/tsconfig');
 
@@ -114,49 +114,70 @@ module.exports = router => {
         }
     });
 
+    router.post('geteasyquestions',(req, res) => {
+
+        //Extract the data from the body
+        const thema = req.body.thema;
+        const level = req.body.level;
+        const author = req.body.author;
 
 
+        //Check if the data is valid
+        if (!thema || !level) {
+            res.status(400).json({message: 'Invalid Request!'});
+        } else {
+
+            //If the parameters are not null, call the register to DB function
+            getQuestion.getFrage(thema, level, author)
+                .then(result => {
+                    res.status(result.status).json(result)
+                })
+                .catch(err => res.status(err.status).json({message: err.message}));
+        }
+    });
+
+    router.post('getmoderatequestions',(req, res) => {
+
+        //Extract the data from the body
+        const thema = req.body.thema;
+        const level = req.body.level;
+        const author = req.body.author;
 
 
+        //Check if the data is valid
+        if (!thema || !level) {
+            res.status(400).json({message: 'Invalid Request!'});
+        } else {
+
+            //If the parameters are not null, call the register to DB function
+            getQuestion.getFrage(thema, level, author)
+                .then(result => {
+                    res.status(result.status).json(result)
+                })
+                .catch(err => res.status(err.status).json({message: err.message}));
+        }
+    });
+
+    router.post('gethardquestions',(req, res) => {
+
+        //Extract the data from the body
+        const thema = req.body.thema;
+        const level = req.body.level;
+        const author = req.body.author;
 
 
+        //Check if the data is valid
+        if (!thema || !level) {
+            res.status(400).json({message: 'Invalid Request!'});
+        } else {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Get questions in order to start a test
-    router.post('/getQuestions', (req,  res) => {
-
-        console.log(req.body.thema);
-        question.getQuestions(req.body.thema)
-
-            .then(result => res.json(result))
-
-            .catch(err => res.status(err.status >= 100 && err.status < 600 ? err.status : 500).json({ message: err.message }));
-
+            //If the parameters are not null, call the register to DB function
+            getQuestion.getFrage(thema, level, author)
+                .then(result => {
+                    res.status(result.status).json(result)
+                })
+                .catch(err => res.status(err.status).json({message: err.message}));
+        }
     });
 
 };
