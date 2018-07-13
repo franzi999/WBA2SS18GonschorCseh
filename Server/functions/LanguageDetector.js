@@ -6,7 +6,7 @@
 
 let https = require ('https');
 
-let accessKey = 'c35482e62b804eafa8d3951866eac6bd';
+let accessKey = 'cdb7da49c5b54138bcc5aa835df75565';
 
 
 let uri = 'westcentralus.api.cognitive.microsoft.com';

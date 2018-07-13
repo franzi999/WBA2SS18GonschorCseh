@@ -38,7 +38,7 @@ module.exports = router => {
         if (checkToken(token)) {
 
             // Franzi, hier bitte ein ejs für MC Fragen
-            res.render('');
+            res.render('addMcQuestion.ejs');
         } else {
             res.status(401).json({ message: 'Invalid Token!' });
         }});
@@ -46,8 +46,6 @@ module.exports = router => {
 
         let token = req.params.token;
         if (checkToken(token)) {
-
-            // Franzi, hier bitte ein ejs für MC Fragen
             res.render('quiz.ejs');
         } else {
             res.status(401).json({ message: 'Invalid Token!' });
