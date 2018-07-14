@@ -11,7 +11,9 @@ exports.getFrage = (thema, level, author) =>
                 if (frages.length === 0) {
                     reject({ status: 404, message: 'No questions Found !' });
                 } else {
+                    resolve({status: 200, message: frages});
                     return frages;
+
                 }
             })
 

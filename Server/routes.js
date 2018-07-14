@@ -45,8 +45,6 @@ module.exports = router => {
 
         const credentials = auth(req);
 
-        console.log(credentials);
-
         if (!credentials) {
             res.status(400).json({ message: 'Invalid Request!' });
         } else {
@@ -114,7 +112,33 @@ module.exports = router => {
         }
     });
 
-    router.post('geteasyquestions',(req, res) => {
+    router.post('/geteasyquestions',(req, res) => {
+
+        //Extract the data from the body
+        const thema = req.body.thema;
+        const level = req.body.level;
+        const author = '';
+
+
+        //Check if the data is valid
+        if (!thema || !level) {
+            console.log("error");
+            res.status(400).json({message: 'Invalid Request!'});
+        } else {
+
+            //If the parameters are not null, call the register to DB function
+            getQuestion.getFrage(thema, level, author)
+                .then(result => {
+                    res.status(result.status).json(result)
+                })
+                .catch(err => {
+                    console.log(err.message);
+                    res.status(err.status).json({message: err.message})
+                });
+        }
+    });
+
+    router.post('/getmoderatequestions',(req, res) => {
 
         //Extract the data from the body
         const thema = req.body.thema;
@@ -136,29 +160,7 @@ module.exports = router => {
         }
     });
 
-    router.post('getmoderatequestions',(req, res) => {
-
-        //Extract the data from the body
-        const thema = req.body.thema;
-        const level = req.body.level;
-        const author = req.body.author;
-
-
-        //Check if the data is valid
-        if (!thema || !level) {
-            res.status(400).json({message: 'Invalid Request!'});
-        } else {
-
-            //If the parameters are not null, call the register to DB function
-            getQuestion.getFrage(thema, level, author)
-                .then(result => {
-                    res.status(result.status).json(result)
-                })
-                .catch(err => res.status(err.status).json({message: err.message}));
-        }
-    });
-
-    router.post('gethardquestions',(req, res) => {
+    router.post('/gethardquestions',(req, res) => {
 
         //Extract the data from the body
         const thema = req.body.thema;

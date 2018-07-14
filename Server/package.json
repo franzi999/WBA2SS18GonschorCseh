@@ -15,7 +15,8 @@
     "jsonwebtoken": "^8.3.0",
     "bcryptjs": "^2.4.3",
     "http": "^0.0.0",
-    "request": "^2.87.0"
+    "request": "^2.87.0",
+    "node-dandelion": "^1.0.2"
   },
   "devDependencies": {
     "css-loader": "^0.28.11",

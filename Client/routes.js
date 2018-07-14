@@ -5,6 +5,12 @@
 //Import functions
 const request = require('request');
 const jwt = require('jsonwebtoken');
+const https = require ('https');
+
+let accessKey = 'cdb7da49c5b54138bcc5aa835df75565';
+let uri = 'westcentralus.api.cognitive.microsoft.com';
+let path = '/text/analytics/v2.0/keyPhrases';
+let questionLevel;
 
 const config = require('./config/tsconfig');
 
@@ -120,11 +126,17 @@ module.exports = router => {
         if (checkToken(req.headers['x-access-token'])) {
 
             let newQuestion = req.body;
-
             newQuestion.author = getUser(req.headers['x-access-token']);
+            let document =
+                { 'documents':[
+                        { 'id': '1', 'language': 'de', 'text': newQuestion.antwort },
+                    ]
+                };
+            getKeywords(document);
+
+            newQuestion.level = questionLevel;
 
             console.log(newQuestion);
-
             const options = {
                 url: 'http://localhost:3000/questions',
                 method: 'POST',
@@ -185,27 +197,8 @@ module.exports = router => {
 
         if (checkToken(req.headers['x-access-token'])) {
 
-            if (req.body.level === 'easy'){
-
-                const optionsE = {
-                    url: 'http://localhost:3000/getquestionseasy',
-                    method: 'POST',
-                    json: req.body
-                };
-
-                request.post(optionsE, function (err, httpResponse, body) {
-                    if (err) {
-                        console.error(err);
-                        console.log(err.message);
-                        res.send(err.statusCode);
-                    } else {
-                        console.log(httpResponse.statusCode);
-                        questions = {"easyQuestions": body};
-                    }
-                });
-
                 const optionsM = {
-                    url: 'http://localhost:3000/getquestionsmoderate',
+                    url: 'http://localhost:3000/geteasyquestions',
                     method: 'POST',
                     json: req.body
                 };
@@ -216,82 +209,12 @@ module.exports = router => {
                         res.send(err.statusCode);
                     } else {
                         console.log(httpResponse.statusCode);
-                        questions = {"moderateQuestions": body};
+                        questions.easyQuestions = body.message;
+                        console.log(body.message);
+                        console.log("to be sent", questions);
+                        res.status(200).json(questions);
                     }
                 });
-
-                const optionsH = {
-                    url: 'http://localhost:3000/getquestionshard',
-                    method: 'POST',
-                    json: req.body
-                };
-
-                request.post(optionsH, function (err, httpResponse, body) {
-                    if (err) {
-                        console.error(err);
-                        res.send(err.statusCode);
-                    } else {
-                        console.log(httpResponse.statusCode);
-                        questions = {"hardQuestions": body};
-                    }
-                });
-
-            }
-
-            if (req.body.level === 'moderate'){
-
-                const optionsM = {
-                    url: 'http://localhost:3000/getquestionsmoderate',
-                    method: 'POST',
-                    json: req.body
-                };
-
-                request.post(optionsM, function (err, httpResponse, body) {
-                    if (err) {
-                        console.error(err);
-                        res.send(err.statusCode);
-                    } else {
-                        console.log(httpResponse.statusCode);
-                        questions = {"moderateQuestions": body};
-                    }
-                });
-
-                const optionsH = {
-                    url: 'http://localhost:3000/getquestionshard',
-                    method: 'POST',
-                    json: req.body
-                };
-
-                request.post(optionsH, function (err, httpResponse, body) {
-                    if (err) {
-                        console.error(err);
-                        res.send(err.statusCode);
-                    } else {
-                        console.log(httpResponse.statusCode);
-                        questions = {"hardQuestions": body};
-                    }
-                });
-            }
-
-            if (req.body.level === 'hard'){
-
-                const optionsH = {
-                    url: 'http://localhost:3000/getquestionshard',
-                    method: 'POST',
-                    json: req.body
-                };
-
-                request.post(optionsH, function (err, httpResponse, body) {
-                    if (err) {
-                        console.error(err);
-                        res.send(err.statusCode);
-                    } else {
-                        console.log(httpResponse.statusCode);
-                        questions = {"hardQuestions": body};
-                    }
-                });
-            }
-            res.status(200).json(questions);
         }
     });
 
@@ -329,14 +252,47 @@ module.exports = router => {
         }
     }
 
-    function shuffleArray(array){
+    let response_handler = function (response) {
+        let body = '';
+        response.on ('data', function (d) {
+            body += d;
+        });
+        response.on ('end', function () {
+            let body_ = JSON.parse (body);
+            //let body__ = JSON.stringify (body_, null, '  ');
+            //console.log (body__);
+            console.log(body_.documents[0].keyPhrases.length);
+            if (body_.documents[0].keyPhrases.length <= 5){
+                questionLevel = "easy";
+            }
+            if (body_.documents[0].keyPhrases.length > 5 && body_.documents[0].keyPhrases.length <= 10){
+                questionLevel = "moderate";
+            }
+            if (body_.documents[0].keyPhrases.length > 10){
+                questionLevel = "hard";
+            }
+            console.log(questionLevel);
+        });
+        response.on ('error', function (e) {
+            console.log ('Error: ' + e.message);
+        });
+    };
 
-        for (let i = array.length - 1; i > 0; i--){
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
+    let getKeywords = function (document) {
+        let body = JSON.stringify (document);
 
-        return array;
-    }
+        let request_params = {
+            method : 'POST',
+            hostname : uri,
+            path : path,
+            headers : {
+                'Ocp-Apim-Subscription-Key' : accessKey,
+            }
+        };
+
+        let req = https.request (request_params, response_handler);
+        req.write (body);
+        req.end ();
+    };
 
 };

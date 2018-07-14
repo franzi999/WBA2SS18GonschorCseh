@@ -38,59 +38,7 @@
         </div>
     </div>
 <script type="text/javascript">
-    function einblenden(){
-        $("#question").fadeIn('slow', function() {
-            $("#question").show();
-        });
-        $("#btn1").fadeIn('slow', function() {
-            $("#btn1").show();
-        });
-        $("#btn2").fadeIn('slow', function() {
-            $("#btn2").show();
-        });
-        $("#btn3").fadeIn('slow', function() {
-            $("#btn3").show();
-        });
-        $("#btn4").fadeIn('slow', function() {
-            $("#btn4").show();
-        });
-        $("#progress").fadeIn('slow', function() {
-            $("#progress").show();
-        });
-    }
 
-    function ausblenden(){
-        $("#thema").fadeOut('slow', function() {
-            $("#thema").hide();
-        });
-        $("#level").fadeOut('slow', function() {
-            $("#level").hide();
-        });
-        $("#startTest").fadeOut('slow', function() {
-            $("#startTest").hide();
-        });
-    }
-
-    document.getElementById("question").style.display = "none";
-    document.getElementById("btn1").style.display ="none";
-    document.getElementById("btn2").style.display ="none";
-    document.getElementById("btn3").style.display ="none";
-    document.getElementById("btn4").style.display ="none";
-    document.getElementById("progress").style.display ="none";
-
-    document.getElementById("startTest").onclick = function () {
-        //test();
-        ausblenden();
-        einblenden();
-
-    }
-
-
-    document.getElementById("antworten").onclick = function (){
-        let antwort = document.getElementById("antwort").value;
-        checkAnswer(antwort);
-        nextFrage();
-    }
 
     let easyFragen;
     let moderateFragen;
@@ -101,6 +49,26 @@
     let isRichtig;
     let frage;
 
+
+
+    document.getElementById("question").style.display = "none";
+    document.getElementById("btn1").style.display ="none";
+    document.getElementById("btn2").style.display ="none";
+    document.getElementById("btn3").style.display ="none";
+    document.getElementById("btn4").style.display ="none";
+    document.getElementById("progress").style.display ="none";
+
+    document.getElementById("startTest").onclick = function () {
+        test();
+    }
+
+    document.getElementById("antworten").onclick = function (){
+        let antwort = document.getElementById("antwort").value;
+        checkAnswer(antwort);
+        nextFrage();
+    }
+
+
     function test() {
 
         let obj = {};
@@ -110,40 +78,202 @@
         //obj["author"] = document.getElementById("author").value;
         obj = JSON.stringify(obj);
 
-        const settings = {
-            "async": false,
-            "crossDomain": true,
-            "url": "http://127.0.0.1:3001/quiz/getQuestions",
-            "method": "POST",
-            "dataType": "json",
-            "headers": {
-                "Content-Type": "application/json",
-                "Cache-Control": "no-cache",
-                "x-access-token": localStorage.getItem('token')
-            },
-            "data": obj,
-        };
 
-        $.ajax(settings).done(function (result) {
+        if (actualLevel === 'easy'){
 
-            console.log(result.status, "Fragen wurden geladen");
+            const settingsEasy = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": obj,
+            };
 
-           const easyFragen = result.easyQuestions;
-           const moderateFragen = result.moderateQuestions;
-           const hardFragen = result.hardQuestions;
+            $.ajax(settingsEasy).done(function (result1) {
 
-           console.log(easyFragen);
+                console.log("the result: ",result1);
+                console.log("Fragen wurden geladen");
+                easyFragen = shuffleArray(result1.easyQuestions);
+                console.log(easyFragen);
 
-            // Update UI. Vorbereitung für Fragen"
+                // Update UI. Vorbereitung für Fragen"
 
-            //window.location.reload;
-        })
-            .fail(function (xhr, textStatus, error) {
-                console.log("Fail");
-                console.log(error);
-            });
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
 
+            const settingsModerate = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": obj,
+            };
+
+            $.ajax(settingsModerate).done(function (result2) {
+
+                console.log("the result: ",result2);
+                console.log("Fragen wurden geladen");
+                moderateFragen = result2.moderateQuestions;
+                console.log(moderateFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+
+
+            const settingsHard = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": obj,
+            };
+
+            $.ajax(settingsHard).done(function (result3) {
+
+                console.log("the result: ",result3);
+                console.log("Fragen wurden geladen");
+                hardFragen = result3.hardQuestions;
+                console.log(hardFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+        }
+
+        if (actualLevel === 'moderate'){
+
+            const settingsModerate = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": obj,
+            };
+
+            $.ajax(settingsModerate).done(function (result2) {
+
+                console.log("the result: ",result2);
+                console.log("Fragen wurden geladen");
+                moderateFragen = result2.moderateQuestions;
+                console.log(moderateFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+
+            const settingsHard = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": obj,
+            };
+
+            $.ajax(settingsHard).done(function (result3) {
+
+                console.log("the result: ",result3);
+                console.log("Fragen wurden geladen");
+                hardFragen = result3.hardQuestions;
+                console.log(hardFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+
+        }
+
+        if (actualLevel === 'hard'){
+
+            const settingsHard = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": obj,
+            };
+
+            $.ajax(settingsHard).done(function (result3) {
+
+                console.log("the result: ",result3);
+                console.log("Fragen wurden geladen");
+                hardFragen = result3.hardQuestions;
+                console.log(hardFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+
+        }
         ersteFrage();
+        ausblenden();
+        einblenden();
+
     }
 
 
@@ -247,7 +377,48 @@
         }
     }
 
+    function einblenden(){
+        $("#question").fadeIn('slow', function() {
+            $("#question").show();
+        });
+        $("#btn1").fadeIn('slow', function() {
+            $("#btn1").show();
+        });
+        $("#btn2").fadeIn('slow', function() {
+            $("#btn2").show();
+        });
+        $("#btn3").fadeIn('slow', function() {
+            $("#btn3").show();
+        });
+        $("#btn4").fadeIn('slow', function() {
+            $("#btn4").show();
+        });
+        $("#progress").fadeIn('slow', function() {
+            $("#progress").show();
+        });
+    }
 
+    function ausblenden(){
+        $("#thema").fadeOut('slow', function() {
+            $("#thema").hide();
+        });
+        $("#level").fadeOut('slow', function() {
+            $("#level").hide();
+        });
+        $("#startTest").fadeOut('slow', function() {
+            $("#startTest").hide();
+        });
+    }
+
+    function shuffleArray(array){
+
+        for (let i = array.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+
+        return array;
+    }
 
 
 </script>
