@@ -22,25 +22,69 @@
                 <option value="hard">schwierig</option>
             </select>
             <button id='startTest'>Test Starten</button>
-            <button id='antworten'>Antworten</button>
+
         <div id="question">
-            <input id="antwort" name="Antwort" class="textInput">
+            <h4>Frage </h4>
         </div>
         <div class="button">
             <button id="btn1"><span id="choice1"></span></button>
             <button id="btn2"><span id="choice2"></span></button>
             <button id="btn3"><span id="choice3"></span></button>
+            <button id="btn4"><span id="choice4"></span></button>
             </div>
             <footer>
             <p id="progress">Question x of y.</p>
             </footer>
         </div>
     </div>
-<script>
+<script type="text/javascript">
+    function einblenden(){
+        $("#question").fadeIn('slow', function() {
+            $("#question").show();
+        });
+        $("#btn1").fadeIn('slow', function() {
+            $("#btn1").show();
+        });
+        $("#btn2").fadeIn('slow', function() {
+            $("#btn2").show();
+        });
+        $("#btn3").fadeIn('slow', function() {
+            $("#btn3").show();
+        });
+        $("#btn4").fadeIn('slow', function() {
+            $("#btn4").show();
+        });
+        $("#progress").fadeIn('slow', function() {
+            $("#progress").show();
+        });
+    }
+
+    function ausblenden(){
+        $("#thema").fadeOut('slow', function() {
+            $("#thema").hide();
+        });
+        $("#level").fadeOut('slow', function() {
+            $("#level").hide();
+        });
+        $("#startTest").fadeOut('slow', function() {
+            $("#startTest").hide();
+        });
+    }
+
+    document.getElementById("question").style.display = "none";
+    document.getElementById("btn1").style.display ="none";
+    document.getElementById("btn2").style.display ="none";
+    document.getElementById("btn3").style.display ="none";
+    document.getElementById("btn4").style.display ="none";
+    document.getElementById("progress").style.display ="none";
 
     document.getElementById("startTest").onclick = function () {
-        test();
+        //test();
+        ausblenden();
+        einblenden();
+
     }
+
 
     document.getElementById("antworten").onclick = function (){
         let antwort = document.getElementById("antwort").value;
