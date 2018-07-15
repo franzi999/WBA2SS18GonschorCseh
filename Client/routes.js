@@ -6,6 +6,7 @@
 const request = require('request');
 const jwt = require('jsonwebtoken');
 const https = require ('https');
+const dandelion = require("node-dandelion");
 
 let accessKey = 'cdb7da49c5b54138bcc5aa835df75565';
 let uri = 'westcentralus.api.cognitive.microsoft.com';
@@ -14,6 +15,11 @@ let questionLevel;
 let newQuestion;
 
 const config = require('./config/tsconfig');
+
+dandelion.configure({
+    "app_key":"e39378da14dc4d7b9fba017ff8f30ef5",
+    "app_id":"e39378da14dc4d7b9fba017ff8f30ef5"
+});
 
 //Define and implement the routes
 module.exports = router => {
@@ -198,6 +204,46 @@ module.exports = router => {
                 });
         }
     });
+
+    router.post('/quiz/checkAntwort', (req, res) => {
+
+        if (checkToken(req.headers['x-access-token'])) {
+
+            let result = {};
+            console.log(req.body.antwort);
+            console.log(req.body.antwortRichtig);
+            // Vergleiche Strings auf Ähnlichkeit
+            dandelion.txtSim(
+                {
+                    "string1": {
+                        "type": "txt",
+                        "value": req.body.antwort
+                    },
+                    "string2": {
+                        "type": "txt",
+                        "value": req.body.antwortRichtig
+                    },
+                    "lang": "de",
+                    "bow": "never"
+                },
+                function (results) {
+                    result.isRichtig = results.similarity > 50;
+                    console.log(results);
+                    result = JSON.stringify(result);
+                    res.status(200).json(result);
+
+                    /***** RESULTS: *****
+                     { time: 2,
+                     similarity: 0.4987,
+                     lang: 'en',
+                     timestamp: '2015-04-24T15:46:09.625' }
+                     **********/
+                }
+            );
+        }
+    });
+
+
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////

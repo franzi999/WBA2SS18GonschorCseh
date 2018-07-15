@@ -16,7 +16,8 @@
     "pug": "^2.0.3",
     "request": "^2.87.0",
     "requirejs": "^2.3.5",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "node-dandelion": "^1.0.2"
   },
   "devDependencies": {
     "css-loader": "^0.28.11",

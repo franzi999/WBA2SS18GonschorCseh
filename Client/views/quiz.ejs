@@ -24,8 +24,9 @@
             <button id='startTest'>Test Starten</button>
 
         <div id="question">
-            <h4>Frage </h4>
+            <h4>Frage</h4>
         </div>
+            <input type="text" id="antwort"/>
         <div class="button">
             <button id="btn1"><span id="choice1"></span></button>
             <button id="btn2"><span id="choice2"></span></button>
@@ -33,6 +34,7 @@
             <button id="btn4"><span id="choice4"></span></button>
             </div>
             <footer>
+                <button id='antworten'>Antwort</button>
             <p id="progress">Question x of y.</p>
             </footer>
         </div>
@@ -64,22 +66,30 @@
 
     document.getElementById("antworten").onclick = function (){
         let antwort = document.getElementById("antwort").value;
-        checkAnswer(antwort);
+        console.log(frage);
+        let antwortRichtig = frage.antwort;
+        checkAnswer(antwort, antwortRichtig);
         nextFrage();
     }
 
 
     function test() {
 
-        let obj = {};
-        obj["thema"] = document.getElementById("thema").value;
-        obj["level"] = document.getElementById("level").value;
+        let objE = {};
+        let objM = {};
+        let objH = {};
+        objE["thema"] = document.getElementById("thema").value;
+        objM["thema"] = document.getElementById("thema").value;
+        objH["thema"] = document.getElementById("thema").value;
+
         actualLevel = document.getElementById("level").value;
         //obj["author"] = document.getElementById("author").value;
-        obj = JSON.stringify(obj);
 
 
         if (actualLevel === 'easy'){
+
+            objE["level"] = document.getElementById("level").value;
+            objE = JSON.stringify(objE);
 
             const settingsEasy = {
                 "async": false,
@@ -92,7 +102,7 @@
                     "Cache-Control": "no-cache",
                     "x-access-token": localStorage.getItem('token')
                 },
-                "data": obj,
+                "data": objE,
             };
 
             $.ajax(settingsEasy).done(function (result1) {
@@ -111,6 +121,8 @@
                     console.log(error);
                 });
 
+            objM["level"] = "moderate";
+            objM = JSON.stringify(objM);
             const settingsModerate = {
                 "async": false,
                 "crossDomain": true,
@@ -122,7 +134,7 @@
                     "Cache-Control": "no-cache",
                     "x-access-token": localStorage.getItem('token')
                 },
-                "data": obj,
+                "data": objM,
             };
 
             $.ajax(settingsModerate).done(function (result2) {
@@ -141,11 +153,14 @@
                     console.log(error);
                 });
 
+            objH["level"] = "hard";
+            objH = JSON.stringify(objH);
+
 
             const settingsHard = {
                 "async": false,
                 "crossDomain": true,
-                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "url": "http://127.0.0.1:3001/quiz/getQuestionsH",
                 "method": "POST",
                 "dataType": "json",
                 "headers": {
@@ -153,7 +168,7 @@
                     "Cache-Control": "no-cache",
                     "x-access-token": localStorage.getItem('token')
                 },
-                "data": obj,
+                "data": objH,
             };
 
             $.ajax(settingsHard).done(function (result3) {
@@ -175,6 +190,9 @@
 
         if (actualLevel === 'moderate'){
 
+            objM["level"] = actualLevel;
+            objM = JSON.stringify(objM);
+
             const settingsModerate = {
                 "async": false,
                 "crossDomain": true,
@@ -186,7 +204,7 @@
                     "Cache-Control": "no-cache",
                     "x-access-token": localStorage.getItem('token')
                 },
-                "data": obj,
+                "data": objM,
             };
 
             $.ajax(settingsModerate).done(function (result2) {
@@ -205,6 +223,9 @@
                     console.log(error);
                 });
 
+
+            objH["level"] = "hard";
+            objH = JSON.stringify(objH);
             const settingsHard = {
                 "async": false,
                 "crossDomain": true,
@@ -216,14 +237,14 @@
                     "Cache-Control": "no-cache",
                     "x-access-token": localStorage.getItem('token')
                 },
-                "data": obj,
+                "data": objH,
             };
 
             $.ajax(settingsHard).done(function (result3) {
 
                 console.log("the result: ",result3);
                 console.log("Fragen wurden geladen");
-                hardFragen = shuffleArray(result3.Questions);;
+                hardFragen = shuffleArray(result3.Questions);
                 console.log(hardFragen);
 
                 // Update UI. Vorbereitung für Fragen"
@@ -238,6 +259,8 @@
         }
 
         if (actualLevel === 'hard'){
+            objH["level"] = actualLevel;
+            objH = JSON.stringify(objH);
 
             const settingsHard = {
                 "async": false,
@@ -250,7 +273,7 @@
                     "Cache-Control": "no-cache",
                     "x-access-token": localStorage.getItem('token')
                 },
-                "data": obj,
+                "data": objH,
             };
 
             $.ajax(settingsHard).done(function (result3) {
@@ -276,8 +299,6 @@
 
     }
 
-
-
     function ersteFrage() {
 
         // @Franzi; Frage anzeigen. DOM Elemente zuweisen.
@@ -298,8 +319,13 @@
         frageCounter ++;
     }
 
-    function checkAnswer(antwort){
+    function checkAnswer(antwort, antwortRichtig){
 
+        console.log(antwort, antwortRichtig);
+        let obj = {};
+        obj["antwort"] = antwort;
+        obj["antwortRichtig"] = antwortRichtig;
+        obj = JSON.stringify(obj);
         const settings = {
             "async": false,
             "crossDomain": true,
@@ -311,12 +337,12 @@
                 "Cache-Control": "no-cache",
                 "x-access-token": localStorage.getItem('token')
             },
-            "data": antwort
+            "data": obj
         }
 
         $.ajax(settings).done(function (result) {
 
-            console.log(result.status);
+            console.log(result);
             isRichtig = result.isRichtig;
             if ((frageCounter % 2) === 1){
                 impAntwort === isRichtig;
@@ -331,18 +357,22 @@
 
     function nextFrage() {
 
+        console.log(frageCounter, frage);
         if (frageCounter < 10){
             if (frageCounter < 4){
                 if (actualLevel === 'easy'){
                     frage = easyFragen[frageCounter];
+
                     // Frage UI updaten
                 }
                 if (actualLevel === 'moderate'){
+                    console.log(moderateFragen);
                     frage = moderateFragen[frageCounter];
+                    console.log(frageCounter, frage);
                     //Frage UI updaten
                 }
                 if (actualLevel === 'hard'){
-                    frage = [hardFragen];
+                    frage = hardFragen[frageCounter];
                     //Frage UI updaten
                 }
             } else {

@@ -1,5 +1,5 @@
 
-var dandelion = require("node-dandelion");
+let dandelion = require("node-dandelion");
 dandelion.configure({
     "app_key":"e39378da14dc4d7b9fba017ff8f30ef5",
     "app_id":"e39378da14dc4d7b9fba017ff8f30ef5"
@@ -16,7 +16,7 @@ dandelion.txtSim(
             "type":"txt",
             "value":"Germany and France are to seek talks with the US to settle a row over spying, as espionage claims continue to overshadow an EU summit in Brussels."
         },
-        "lang":"en",
+        "lang":"de",
         "bow":"never"
     },
     function(results){
