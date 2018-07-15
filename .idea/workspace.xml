@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af726ded-8f7e-400d-a00e-299ce080d45e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/ajax/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/ajax/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/ajax/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/ajax/lib/ajax.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/ajax/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/underscore/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/underscore/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/underscore/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/underscore/underscore-min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/underscore/underscore-min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/node_modules/underscore/underscore.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Client/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/views/quiz.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/views/quiz.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/functions/compareText.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/functions/compareText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,24 +20,8 @@
       <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="205" column="7" selection-start-line="205" selection-start-column="7" selection-end-line="205" selection-end-column="7" />
-              <folding>
-                <element signature="e#393#598#0" />
-                <element signature="e#646#857#0" />
-                <element signature="e#1064#1332#0" />
-                <element signature="e#1384#1586#0" />
-                <element signature="e#1345#1942#0" />
-                <element signature="e#1986#2908#0" />
-                <element signature="e#3286#4199#0" />
-                <element signature="e#4220#5126#0" />
-                <element signature="e#5406#6315#0" />
-                <element signature="e#6341#7516#0" />
-                <element signature="e#4176#4497#0" />
-                <element signature="e#3810#4167#0" />
-                <element signature="e#7627#8548#0" />
-                <element signature="e#8553#9143#0" />
-              </folding>
+            <state relative-caret-position="3162">
+              <caret line="186" selection-start-line="186" selection-end-line="186" />
             </state>
           </provider>
         </entry>
@@ -60,17 +29,8 @@
       <file leaf-file-name="quiz.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/views/quiz.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="368" column="48" selection-start-line="368" selection-start-column="48" selection-end-line="368" selection-end-column="48" />
-              <folding>
-                <element signature="e#2310#9182#0#HTML" />
-                <element signature="e#2662#5840#0#HTML" />
-                <element signature="e#9212#9751#0#HTML" />
-                <element signature="e#9961#10914#0#HTML" />
-                <element signature="e#12495#13058#0#HTML" />
-                <element signature="e#13085#13379#0#HTML" />
-                <element signature="e#13413#13622#0#HTML" />
-              </folding>
+            <state relative-caret-position="1088">
+              <caret line="451" lean-forward="true" selection-start-line="451" selection-end-line="451" />
             </state>
           </provider>
         </entry>
@@ -78,17 +38,8 @@
       <file leaf-file-name="addQuestion.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/views/addQuestion.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compareText.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/functions/compareText.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+            <state relative-caret-position="544">
+              <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -97,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/Client/views/login.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="63" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="63" />
+              <caret line="14" column="63" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -244,18 +195,18 @@
               <item name="WBA2SS18GonschorCseh" type="b2602c69:ProjectViewProjectNode" />
               <item name="WBA2SS18GonschorCseh" type="462c0819:PsiDirectoryNode" />
               <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WBA2SS18GonschorCseh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WBA2SS18GonschorCseh" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WBA2SS18GonschorCseh" type="b2602c69:ProjectViewProjectNode" />
               <item name="WBA2SS18GonschorCseh" type="462c0819:PsiDirectoryNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WBA2SS18GonschorCseh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WBA2SS18GonschorCseh" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="functions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -345,46 +296,35 @@
       <workItem from="1529789605065" duration="1314000" />
       <workItem from="1531548786974" duration="8220000" />
       <workItem from="1531561441992" duration="3949000" />
+      <workItem from="1531680760846" duration="901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98103000" />
+    <option name="totallyTimeSpent" value="99004000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.09456265" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.13169643" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.329653" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.32866043" />
-      <window_info anchor="bottom" id="Version Control" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.46884736" />
-      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.2538941" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.39869282" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info id="npm" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.13169643" />
-      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Version Control" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.32843137" />
-      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" weight="0.329653" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="4" weight="0.3289689" />
+      <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.31535947" />
       <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="npm" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.3289689" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,13 +390,7 @@
     <entry file="file://$PROJECT_DIR$/Client/config/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="122" lean-forward="true" selection-start-line="122" selection-end-line="122" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/package-lock.json" />
     <entry file="file://$PROJECT_DIR$/Server/functions/Textanalysis.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -492,13 +426,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/views/addMcQuestion.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/views/addMcQuestion.ejs" />
     <entry file="file://$PROJECT_DIR$/Client/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -555,12 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="771">
           <caret line="131" column="40" selection-start-line="131" selection-start-column="40" selection-end-line="131" selection-end-column="40" />
-          <folding>
-            <element signature="e#672#1362#0" />
-            <element signature="e#1430#2009#0" />
-            <element signature="e#2097#2951#0" />
-            <element signature="e#3057#4460#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -571,63 +493,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/functions/compareText.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="3" lean-forward="true" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/functions/compareText.js" />
     <entry file="file://$PROJECT_DIR$/Client/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="63" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="63" />
+          <caret line="14" column="63" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/views/addQuestion.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="34" />
+        <state relative-caret-position="544">
+          <caret line="32" column="7" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="205" column="7" selection-start-line="205" selection-start-column="7" selection-end-line="205" selection-end-column="7" />
-          <folding>
-            <element signature="e#393#598#0" />
-            <element signature="e#646#857#0" />
-            <element signature="e#1064#1332#0" />
-            <element signature="e#1384#1586#0" />
-            <element signature="e#1345#1942#0" />
-            <element signature="e#1986#2908#0" />
-            <element signature="e#3286#4199#0" />
-            <element signature="e#4220#5126#0" />
-            <element signature="e#5406#6315#0" />
-            <element signature="e#6341#7516#0" />
-            <element signature="e#4176#4497#0" />
-            <element signature="e#3810#4167#0" />
-            <element signature="e#7627#8548#0" />
-            <element signature="e#8553#9143#0" />
-          </folding>
+        <state relative-caret-position="3162">
+          <caret line="186" selection-start-line="186" selection-end-line="186" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/views/quiz.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="368" column="48" selection-start-line="368" selection-start-column="48" selection-end-line="368" selection-end-column="48" />
-          <folding>
-            <element signature="e#2310#9182#0#HTML" />
-            <element signature="e#2662#5840#0#HTML" />
-            <element signature="e#9212#9751#0#HTML" />
-            <element signature="e#9961#10914#0#HTML" />
-            <element signature="e#12495#13058#0#HTML" />
-            <element signature="e#13085#13379#0#HTML" />
-            <element signature="e#13413#13622#0#HTML" />
-          </folding>
+        <state relative-caret-position="1088">
+          <caret line="451" lean-forward="true" selection-start-line="451" selection-end-line="451" />
         </state>
       </provider>
     </entry>
