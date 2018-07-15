@@ -97,9 +97,9 @@
 
             $.ajax(settingsEasy).done(function (result1) {
 
-                console.log("the result: ",result1);
                 console.log("Fragen wurden geladen");
-                easyFragen = shuffleArray(result1.easyQuestions);
+                console.log("the result: ",result1);
+                easyFragen = shuffleArray(result1.Questions);
                 console.log(easyFragen);
 
                 // Update UI. Vorbereitung für Fragen"
@@ -129,7 +129,7 @@
 
                 console.log("the result: ",result2);
                 console.log("Fragen wurden geladen");
-                moderateFragen = result2.moderateQuestions;
+                moderateFragen = shuffleArray(result2.Questions);
                 console.log(moderateFragen);
 
                 // Update UI. Vorbereitung für Fragen"
@@ -160,7 +160,7 @@
 
                 console.log("the result: ",result3);
                 console.log("Fragen wurden geladen");
-                hardFragen = result3.hardQuestions;
+                hardFragen = shuffleArray(result3.Questions);
                 console.log(hardFragen);
 
                 // Update UI. Vorbereitung für Fragen"
@@ -193,7 +193,7 @@
 
                 console.log("the result: ",result2);
                 console.log("Fragen wurden geladen");
-                moderateFragen = result2.moderateQuestions;
+                moderateFragen = shuffleArray(result2.Questions);
                 console.log(moderateFragen);
 
                 // Update UI. Vorbereitung für Fragen"
@@ -223,7 +223,7 @@
 
                 console.log("the result: ",result3);
                 console.log("Fragen wurden geladen");
-                hardFragen = result3.hardQuestions;
+                hardFragen = shuffleArray(result3.Questions);;
                 console.log(hardFragen);
 
                 // Update UI. Vorbereitung für Fragen"
@@ -257,7 +257,7 @@
 
                 console.log("the result: ",result3);
                 console.log("Fragen wurden geladen");
-                hardFragen = result3.hardQuestions;
+                hardFragen = shuffleArray(result3.Questions);
                 console.log(hardFragen);
 
                 // Update UI. Vorbereitung für Fragen"

@@ -11,6 +11,7 @@ let accessKey = 'cdb7da49c5b54138bcc5aa835df75565';
 let uri = 'westcentralus.api.cognitive.microsoft.com';
 let path = '/text/analytics/v2.0/keyPhrases';
 let questionLevel;
+let newQuestion;
 
 const config = require('./config/tsconfig');
 
@@ -60,7 +61,6 @@ module.exports = router => {
 
 
     //router.get('/quiz', (req, res) => res.render('quiz.ejs'));
-    // router.get('/choiceTest', (req,res) => res.render('choiceTest.ejs'));
 
 
 
@@ -125,7 +125,7 @@ module.exports = router => {
 
         if (checkToken(req.headers['x-access-token'])) {
 
-            let newQuestion = req.body;
+            newQuestion = req.body;
             newQuestion.author = getUser(req.headers['x-access-token']);
             let document =
                 { 'documents':[
@@ -133,25 +133,7 @@ module.exports = router => {
                     ]
                 };
             getKeywords(document);
-
-            newQuestion.level = questionLevel;
-
-            console.log(newQuestion);
-            const options = {
-                url: 'http://localhost:3000/questions',
-                method: 'POST',
-                json: newQuestion
-            };
-
-            request.post(options, function (err, httpResponse, body) {
-                if (err) {
-                    console.error(err);
-                    res.send(err.statusCode);
-                } else {
-                    res.send(httpResponse.statusCode);
-                    console.log(httpResponse.statusCode, body);
-                }
-            });
+            res.status(200).json({message: 'Level Berechnen & Speichern'});
         } else {
             res.status(401).json({ message: 'Invalid Token !' });
         }
@@ -197,21 +179,20 @@ module.exports = router => {
 
         if (checkToken(req.headers['x-access-token'])) {
 
-                const optionsM = {
-                    url: 'http://localhost:3000/geteasyquestions',
+                const options = {
+                    url: 'http://localhost:3000/getquestions',
                     method: 'POST',
                     json: req.body
                 };
 
-                request.post(optionsM, function (err, httpResponse, body) {
+                console.log(req.body);
+                request.post(options, function (err, httpResponse, body) {
                     if (err) {
                         console.error(err);
                         res.send(err.statusCode);
                     } else {
                         console.log(httpResponse.statusCode);
-                        questions.easyQuestions = body.message;
-                        console.log(body.message);
-                        console.log("to be sent", questions);
+                        questions.Questions = body.message;
                         res.status(200).json(questions);
                     }
                 });
@@ -272,6 +253,23 @@ module.exports = router => {
                 questionLevel = "hard";
             }
             console.log(questionLevel);
+
+            newQuestion.level = questionLevel;
+
+            const options = {
+                url: 'http://localhost:3000/questions',
+                method: 'POST',
+                json: newQuestion
+            };
+
+            request.post(options, function (err, httpResponse, body) {
+                if (err) {
+                    console.error(err);
+                } else {
+                    console.log(httpResponse.statusCode, body);
+                }
+            });
+
         });
         response.on ('error', function (e) {
             console.log ('Error: ' + e.message);
