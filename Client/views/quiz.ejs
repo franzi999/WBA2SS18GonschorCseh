@@ -25,14 +25,9 @@
 
         <div id="question">
             <h4>Frage</h4>
+            <p id='frage'></p>
         </div>
             <input type="text" id="antwort"/>
-        <div class="button">
-            <button id="btn1"><span id="choice1"></span></button>
-            <button id="btn2"><span id="choice2"></span></button>
-            <button id="btn3"><span id="choice3"></span></button>
-            <button id="btn4"><span id="choice4"></span></button>
-            </div>
             <footer>
                 <button id='antworten'>Antwort</button>
             <p id="progress">Question x of y.</p>
@@ -54,11 +49,11 @@
 
 
     document.getElementById("question").style.display = "none";
-    document.getElementById("btn1").style.display ="none";
-    document.getElementById("btn2").style.display ="none";
-    document.getElementById("btn3").style.display ="none";
-    document.getElementById("btn4").style.display ="none";
-    document.getElementById("progress").style.display ="none";
+    //document.getElementById("btn1").style.display ="none";
+    //document.getElementById("btn2").style.display ="none";
+    //document.getElementById("btn3").style.display ="none";
+    //document.getElementById("btn4").style.display ="none";
+    //document.getElementById("progress").style.display ="none";
 
     document.getElementById("startTest").onclick = function () {
         test();
@@ -306,10 +301,12 @@
 
         if (actualLevel === 'easy'){
             frage = easyFragen[frageCounter];
+            document.getElementById("frage").innerHTML = frage.frage;
             //Frage UI updaten
         }
         if (actualLevel === 'moderate'){
             frage = moderateFragen[frageCounter];
+            document.getElementById("frage").innerHTML = frage.frage;
             //Frage UI updaten
         }
         if (actualLevel === 'hard'){
@@ -368,6 +365,7 @@
                 if (actualLevel === 'moderate'){
                     console.log(moderateFragen);
                     frage = moderateFragen[frageCounter];
+                    document.getElementById("frage").innerHTML = frage.frage;
                     console.log(frageCounter, frage);
                     //Frage UI updaten
                 }
@@ -410,18 +408,6 @@
     function einblenden(){
         $("#question").fadeIn('slow', function() {
             $("#question").show();
-        });
-        $("#btn1").fadeIn('slow', function() {
-            $("#btn1").show();
-        });
-        $("#btn2").fadeIn('slow', function() {
-            $("#btn2").show();
-        });
-        $("#btn3").fadeIn('slow', function() {
-            $("#btn3").show();
-        });
-        $("#btn4").fadeIn('slow', function() {
-            $("#btn4").show();
         });
         $("#progress").fadeIn('slow', function() {
             $("#progress").show();
