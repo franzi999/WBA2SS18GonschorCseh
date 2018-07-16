@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <meta charset="UTF-8">
+    <title> Quiz </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="grid">
+        <div id="quiz">
+        <h1> Quiz </h1>
+            <select id="thema" title="Ein Thema auswählen">
+                <option value="Mathe">Mathe</option>
+                <option value="WBA">WBA</option>
+                <option value="CGA">CGA</option>
+                <option value="AP1">AP1</option>
+            </select>
+            <select id="level" title="Eine Schwierigkeitsgrad auswählen">
+                <option value="easy">einfach</option>
+                <option value="moderate">mittelmässig</option>
+                <option value="hard">schwierig</option>
+            </select>
+            <button id='startTest'>Test Starten</button>
+
+        <div id="question">
+            <h4>Frage</h4>
+            <p id='frage'></p>
+        </div>
+            <input type="text" id="antwort"/>
+            <footer>
+                <button id='antworten'>Antwort</button>
+            <p id="progress">Question x of y.</p>
+            </footer>
+        </div>
+    </div>
+<script type="text/javascript">
+
+
+    let easyFragen;
+    let moderateFragen;
+    let hardFragen;
+    let actualLevel;
+    let impAntwort;
+    let frageCounter = 1;
+    let isRichtig;
+    let frage;
+
+
+
+    document.getElementById("question").style.display = "none";
+    //document.getElementById("btn1").style.display ="none";
+    //document.getElementById("btn2").style.display ="none";
+    //document.getElementById("btn3").style.display ="none";
+    //document.getElementById("btn4").style.display ="none";
+    //document.getElementById("progress").style.display ="none";
+
+    document.getElementById("startTest").onclick = function () {
+        test();
+    }
+
+    document.getElementById("antworten").onclick = function (){
+        let antwort = document.getElementById("antwort").value;
+        console.log(frage);
+        let antwortRichtig = frage.antwort;
+        checkAnswer(antwort, antwortRichtig);
+        nextFrage();
+    }
+
+
+    function test() {
+
+        let objE = {};
+        let objM = {};
+        let objH = {};
+        objE["thema"] = document.getElementById("thema").value;
+        objM["thema"] = document.getElementById("thema").value;
+        objH["thema"] = document.getElementById("thema").value;
+
+        actualLevel = document.getElementById("level").value;
+        //obj["author"] = document.getElementById("author").value;
+
+
+        if (actualLevel === 'easy'){
+
+            objE["level"] = document.getElementById("level").value;
+            objE = JSON.stringify(objE);
+
+            const settingsEasy = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": objE,
+            };
+
+            $.ajax(settingsEasy).done(function (result1) {
+
+                console.log("Fragen wurden geladen");
+                console.log("the result: ",result1);
+                easyFragen = shuffleArray(result1.Questions);
+                console.log(easyFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+
+            objM["level"] = "moderate";
+            objM = JSON.stringify(objM);
+            const settingsModerate = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": objM,
+            };
+
+            $.ajax(settingsModerate).done(function (result2) {
+
+                console.log("the result: ",result2);
+                console.log("Fragen wurden geladen");
+                moderateFragen = shuffleArray(result2.Questions);
+                console.log(moderateFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+
+            objH["level"] = "hard";
+            objH = JSON.stringify(objH);
+
+
+            const settingsHard = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestionsH",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": objH,
+            };
+
+            $.ajax(settingsHard).done(function (result3) {
+
+                console.log("the result: ",result3);
+                console.log("Fragen wurden geladen");
+                hardFragen = shuffleArray(result3.Questions);
+                console.log(hardFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+        }
+
+        if (actualLevel === 'moderate'){
+
+            objM["level"] = actualLevel;
+            objM = JSON.stringify(objM);
+
+            const settingsModerate = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": objM,
+            };
+
+            $.ajax(settingsModerate).done(function (result2) {
+
+                console.log("the result: ",result2);
+                console.log("Fragen wurden geladen");
+                moderateFragen = shuffleArray(result2.Questions);
+                console.log(moderateFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+
+
+            objH["level"] = "hard";
+            objH = JSON.stringify(objH);
+            const settingsHard = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": objH,
+            };
+
+            $.ajax(settingsHard).done(function (result3) {
+
+                console.log("the result: ",result3);
+                console.log("Fragen wurden geladen");
+                hardFragen = shuffleArray(result3.Questions);
+                console.log(hardFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+
+        }
+
+        if (actualLevel === 'hard'){
+            objH["level"] = actualLevel;
+            objH = JSON.stringify(objH);
+
+            const settingsHard = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://127.0.0.1:3001/quiz/getQuestions",
+                "method": "POST",
+                "dataType": "json",
+                "headers": {
+                    "Content-Type": "application/json",
+                    "Cache-Control": "no-cache",
+                    "x-access-token": localStorage.getItem('token')
+                },
+                "data": objH,
+            };
+
+            $.ajax(settingsHard).done(function (result3) {
+
+                console.log("the result: ",result3);
+                console.log("Fragen wurden geladen");
+                hardFragen = shuffleArray(result3.Questions);
+                console.log(hardFragen);
+
+                // Update UI. Vorbereitung für Fragen"
+
+                //window.location.reload;
+            })
+                .fail(function (xhr, textStatus, error) {
+                    console.log("Fail");
+                    console.log(error);
+                });
+
+        }
+        ersteFrage();
+        ausblenden();
+        einblenden();
+
+    }
+
+    function ersteFrage() {
+
+        // @Franzi; Frage anzeigen. DOM Elemente zuweisen.
+        //Du kannst die Frage selbst unter frage.frage finden
+
+        if (actualLevel === 'easy'){
+            frage = easyFragen[frageCounter];
+            document.getElementById("frage").innerHTML = frage.frage;
+            //Frage UI updaten
+        }
+        if (actualLevel === 'moderate'){
+            frage = moderateFragen[frageCounter];
+            document.getElementById("frage").innerHTML = frage.frage;
+            //Frage UI updaten
+        }
+        if (actualLevel === 'hard'){
+            frage = moderateFragen[frageCounter];
+            //Frage UI updaten
+        }
+        frageCounter ++;
+    }
+
+    function checkAnswer(antwort, antwortRichtig){
+
+        console.log(antwort, antwortRichtig);
+        let obj = {};
+        obj["antwort"] = antwort;
+        obj["antwortRichtig"] = antwortRichtig;
+        obj = JSON.stringify(obj);
+        const settings = {
+            "async": false,
+            "crossDomain": true,
+            "url": "http://127.0.0.1:3001/quiz/checkAntwort",
+            "method": "POST",
+            "dataType": "json",
+            "headers": {
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache",
+                "x-access-token": localStorage.getItem('token')
+            },
+            "data": obj
+        }
+
+        $.ajax(settings).done(function (result) {
+
+            console.log(result);
+            isRichtig = result.isRichtig;
+            if ((frageCounter % 2) === 1){
+                impAntwort === isRichtig;
+            }
+
+        })
+            .fail(function (xhr, textStatus, error) {
+                console.log("Fail");
+                console.log(error);
+            });
+    }
+
+    function nextFrage() {
+
+        console.log(frageCounter, frage);
+        if (frageCounter < 10){
+            if (frageCounter < 4){
+                if (actualLevel === 'easy'){
+                    frage = easyFragen[frageCounter];
+
+                    // Frage UI updaten
+                }
+                if (actualLevel === 'moderate'){
+                    console.log(moderateFragen);
+                    frage = moderateFragen[frageCounter];
+                    document.getElementById("frage").innerHTML = frage.frage;
+                    console.log(frageCounter, frage);
+                    //Frage UI updaten
+                }
+                if (actualLevel === 'hard'){
+                    frage = hardFragen[frageCounter];
+                    //Frage UI updaten
+                }
+            } else {
+                if ((frageCounter % 2) === 0) {
+                    if (isRichtig && impAntwort) {
+                        if (actualLevel === 'easy') {
+                            frage = moderateFragen[frageCounter];
+                            actualLevel = 'moderate';
+                            // Frage UI updaten
+                        }
+                        if (actualLevel === 'moderate') {
+                            frage = hardFragen[frageCounter];
+                            actualLevel = 'hard';
+                            //Frage UI updaten
+                        }
+                    }
+                    if (!isRichtig && !impAntwort) {
+                        if (actualLevel === 'moderate') {
+                            frage = easyFragen[frageCounter];
+                            actualLevel = 'easy';
+                            //Frage UI updaten
+                        }
+                        if (actualLevel === 'hard') {
+                            frage = moderateFragen[frageCounter];
+                            actualLevel = 'moderate';
+                            //Frage UI updaten
+                        }
+                    }
+                }
+            }
+            frageCounter++;
+        }
+    }
+
+    function einblenden(){
+        $("#question").fadeIn('slow', function() {
+            $("#question").show();
+        });
+        $("#progress").fadeIn('slow', function() {
+            $("#progress").show();
+        });
+    }
+
+    function ausblenden(){
+        $("#thema").fadeOut('slow', function() {
+            $("#thema").hide();
+        });
+        $("#level").fadeOut('slow', function() {
+            $("#level").hide();
+        });
+        $("#startTest").fadeOut('slow', function() {
+            $("#startTest").hide();
+        });
+    }
+
+    function shuffleArray(array){
+
+        for (let i = array.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+
+        return array;
+    }
+
+
+</script>
+</body></html>

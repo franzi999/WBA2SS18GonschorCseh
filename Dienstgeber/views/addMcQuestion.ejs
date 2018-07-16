@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neue Frage hinzufügen</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+</head>
+
+<body>
+<div>
+    <h1>Neue Frage hinzufügen</h1>
+    <p>Im unteren Feld kannst du eine neue Frage dem Quiz hinzufügen.</p>
+    <p>Markiere die richtige Antwort deiner Multiplechoice-Frage mit einem Häkchen in der Checkbox. Weise außerdem deiner Frage einen Schwierigkeitsgrad und ein Thema hinzu.</p>
+</div>
+<div>
+    <label>Frage</label>
+    <input type='text' id='mcFrage'></div>
+<div><label>Antwort A</label>
+    <input type='text' id='mcAntwortA'>
+    <input type="checkbox" id="A"></div>
+<div><label>Antwort B</label>
+    <input type='text' id='mcAntwortB'>
+    <input type="checkbox" id="B"></div>
+<div><label>Antwort C</label>
+    <input type='text' id='mcAntwortC'>
+    <input type="checkbox" id="C"></div>
+<div><label>Antwort D</label>
+    <input type='text' id='mcAntwortD'>
+    <input type="checkbox" id="D"></div>
+
+
+    <select id="mcThema">
+        <option value="Mathe">Mathe</option>
+        <option value="WBA">WBA</option>
+        <option value="CGA">CGA</option>
+        <option value="AP1">AP1</option>
+    </select>
+
+    <select id="mcLevel">
+    <option value="easy">Easy</option>
+    <option value="moderate">Moderate</option>
+    <option value="hard">Hard</option>
+    </select>
+
+    <button id='addQuestion'>Hinzufügen</button>
+</div>
+<script>
+
+    document.getElementById("addQuestion").onclick = function () {
+        postQuestion();
+        trueAnswer();
+    }
+
+    function trueAnswer(){
+        if(checkbox.checked && mcAntwortA){
+            const mcIstRichtigA = true;
+        } else if (checkbox.checked && mcAntwortB){
+            const mcIstRichtigB = true;
+        } else if (checkbox.checked && mcAntwortC){
+            const mcIstRichtigC = true;
+        } else {const mcIstRichtigD = true; }
+    }
+
+    function postQuestion() {
+
+        let obj = {};
+
+        obj["frage"] = document.getElementById("questionInput").value;
+        obj["thema"] = document.getElementById("thema").value;
+        obj["level"] = "easy";
+        obj["author"] = "du";
+        obj["antwortA"] = document.getElementById("antwortInputA").value;
+        obj["antwortB"] = document.getElementById("antwortInputB").value;
+        obj["antwortC"] = document.getElementById("antwortInputC").value;
+        obj["antwortD"] = document.getElementById("antwortInputD").value;
+
+        obj = JSON.stringify(obj);
+
+        console.log(obj);
+
+        const settings = {
+            "async": false,
+            "crossDomain": true,
+            "url": "http://127.0.0.1:3001/home/addMcQuestion",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache",
+                "x-access-token": localStorage.getItem('token')
+            },
+            "data": obj
+        }
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    }
+
+</script>
+</body>
+</html>

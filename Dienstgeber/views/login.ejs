@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="./css/Login_style.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        <h2>Logge dich ein!</h2>
+        <form id="form_id" method="post" name="myform">
+            <label>User Name :</label>
+            <input type="text" id="userInput" name="username"/>
+            <label>Password :</label>
+            <input type="password" id="passInput" name="password"/>
+            <input type="button" value="Login" id="submit"/>
+        </form>
+    </div>
+</div>
+<script>
+
+    document.getElementById("submit").onclick = function () {
+        login();
+        alert("Erfolgreich eingeloggt");
+        window.location.href= 'http://localhost:3001/home/' + data.token;
+    }
+
+    function login() {
+
+        let obj = {};
+        obj["email"] = document.getElementById("userInput").value;
+        obj["pass"] = document.getElementById("passInput").value;
+        obj = JSON.stringify(obj);
+
+        const settings = {
+            "async": false,
+            "crossDomain": true,
+            "url": "http://127.0.0.1:3001/login",
+            "method": "POST",
+            "dataType": "json",
+            "headers": {
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache"
+            },
+            "data": obj,
+        }
+
+        $.ajax(settings).done(function (result) {
+            console.log("logged in");
+            let data = JSON.parse(result);
+
+            if (data.status === 200){
+
+                localStorage.setItem('token', data.token);
+                const url = 'http://localhost:3001/home/' + data.token;
+                window.location.replace(url);
+            }
+        })
+            .fail(function(xhr, textStatus, error) {
+                console.log("Fail");
+                console.log(error);
+            });
+    }
+
+</script>
+</body>
+</html>
